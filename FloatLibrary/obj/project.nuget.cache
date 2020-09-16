@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "ibRKnv6yshMC+JB9omcOrx/N3vZ6//vuGbgDHYzVpc110wuZDzbHewrHWDepojyVJGHYN//7f4oLbGc4C5u4sw==",
+  "dgSpecHash": "ktKq0ij2nxHPQji9KGwQk8tEny9R1mgTfMuQW0Hc2VO3j+dQAVz541iCQEr19PRqRFGtXkGBNayNL2JMEBJ+SA==",
   "success": true,
   "projectFilePath": "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\FloatLibrary.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tedgu\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\tedgu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\tedgu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\tedgu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\tedgu\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512",
+    "C:\\Users\\tedgu\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.7.0\\system.reflection.emit.ilgeneration.4.7.0.nupkg.sha512",
+    "C:\\Users\\tedgu\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }
