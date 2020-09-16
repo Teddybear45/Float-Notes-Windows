@@ -1,0 +1,51 @@
+﻿<Page x:Class="Float_Notes_win.sub_content.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Float_Notes_win.sub_content"
+      mc:Ignorable="d" 
+      d:DesignHeight="1080" d:DesignWidth="1000"
+      Title="home_control_page">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!--date-->
+
+        <Label Grid.ColumnSpan="2" Background="Black" Margin="0 0 0 0">
+            <StackPanel Orientation="Horizontal">
+                <Label Name="LiveTimeHourMinute" Content="11:59" FontSize="16" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#E5BDFB92"/>
+                <Label Name="LiveTimeMonthDay" Content="Monday, Januaury 1" FontSize="16" Margin="10 0 0 0" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#D8E3FFD0"/>
+
+                <!--upcoming event-->
+                <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
+                    <TextBlock Text="In x-Hours and x-Minutes: REMINDER_EVENT_TASK" Foreground="#E5FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="19" Background="Black"/>
+                </StackPanel>
+            </StackPanel>
+        </Label>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="1*"/>
+                
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Today" Foreground="White" FontSize="38" Margin="20 0 0 0"/>
+        </Grid>
+
+
+    </Grid>
+</Page>
