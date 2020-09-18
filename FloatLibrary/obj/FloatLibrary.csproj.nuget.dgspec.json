@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\FloatLibrary.csproj": {}
+    "C:\\Users\\tedgu\\source\\repos\\FloatLibrary\\FloatLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\FloatLibrary.csproj": {
+    "C:\\Users\\tedgu\\source\\repos\\FloatLibrary\\FloatLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\FloatLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\tedgu\\source\\repos\\FloatLibrary\\FloatLibrary.csproj",
         "projectName": "FloatLibrary",
-        "projectPath": "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\FloatLibrary.csproj",
+        "projectPath": "C:\\Users\\tedgu\\source\\repos\\FloatLibrary\\FloatLibrary.csproj",
         "packagesPath": "C:\\Users\\tedgu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tedgu\\VS-projects\\source\\repos\\Float-Notes-win\\FloatLibrary\\obj\\",
+        "outputPath": "C:\\Users\\tedgu\\source\\repos\\FloatLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tedgu\\AppData\\Roaming\\NuGet\\NuGet.Config",
