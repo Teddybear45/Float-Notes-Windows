@@ -24,23 +24,28 @@ namespace Float_Notes_win.sub_content
         public notes_page()
         {
             InitializeComponent();
+
+            LoadNotesList();
             
 
         }
 
         private void LoadNotesList()
         {
+            AllNotes = SqliteDataAccess.LoadNotes();
+            
             WireUpNotesList();
         }
 
         private void WireUpNotesList()
         {
-            //listNotesBox.DataSource = null;
             //listNotesBox.DataContext = AllNotes;
             //listNotesBox.DisplayMemberPath = "Title";
 
             listNotesBox.ItemsSource = null;
             listNotesBox.ItemsSource = AllNotes;
+
+            //listNotesBox.DisplayMemberPath = "NContent";
             
 
             
@@ -50,22 +55,27 @@ namespace Float_Notes_win.sub_content
 
         private void addNoteBtnClick(object sender, EventArgs e)
         {
-            SingleNoteStack snp = new SingleNoteStack();
+            SingleNoteStack snp = new SingleNoteStack
+            {
+                Title = "test_INIT",
+                ModifiedDate = DateTime.Now.Ticks,
 
-            snp.Title = "test_INIT";
-            snp.ModifiedDate = DateTime.Now.Ticks;
+                NContent = noteNContext.Text
+            };
 
-            snp.NContent = noteNContext.Text;
+            SqliteDataAccess.SaveNote(snp);
 
-            AllNotes.Add(snp);
-            WireUpNotesList();
+            LoadNotesList();
 
             noteNContext.Text = "";
         }
-        
 
+        private void refreshNotesBtnClick(object sender, RoutedEventArgs e)
+        {
+            LoadNotesList();
+        }
 
-
+     
     }
     
 }
