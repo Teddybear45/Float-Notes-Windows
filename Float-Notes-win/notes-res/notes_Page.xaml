@@ -59,8 +59,8 @@
 
                 </TextBox>
 
-                <Button Click="addNoteBtnClick" Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
-                <Button Click="refreshNotesBtnClick" Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
+                <Button  Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
+                <Button  Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
             </Grid>
             <!--main showing notes-->
             <Grid Grid.Row="2">

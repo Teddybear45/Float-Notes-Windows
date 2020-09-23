@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Float-wpf", "Float-Notes-win\Float-wpf.csproj", "{38D2F274-812F-4138-842E-FAC3A4031A21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FloatLibrary", "FloatLibrary\FloatLibrary.csproj", "{FEE42076-1390-4D49-8034-9364781AAE63}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5CCAD13-5296-4596-8D62-300A56D43CBD}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -22,10 +20,6 @@ Global
 		{38D2F274-812F-4138-842E-FAC3A4031A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38D2F274-812F-4138-842E-FAC3A4031A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38D2F274-812F-4138-842E-FAC3A4031A21}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FEE42076-1390-4D49-8034-9364781AAE63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEE42076-1390-4D49-8034-9364781AAE63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEE42076-1390-4D49-8034-9364781AAE63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEE42076-1390-4D49-8034-9364781AAE63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

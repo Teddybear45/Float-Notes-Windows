@@ -1,5 +1,4 @@
-﻿using FloatLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,61 +18,15 @@ namespace Float_Notes_win.sub_content
 
     public partial class notes_page : Page
     {
-        public List<SingleNoteStack> AllNotes = new List<SingleNoteStack>();
 
         public notes_page()
         {
             InitializeComponent();
 
-            LoadNotesList();
 
 
         }
-
-        private void LoadNotesList()
-        {
-            AllNotes = SqliteDataAccess.LoadNotes();
-
-            WireUpNotesList();
-        }
-
-        private void WireUpNotesList()
-        {
-            //listNotesBox.DataContext = AllNotes;
-            //listNotesBox.DisplayMemberPath = "Title";
-
-            listNotesBox.ItemsSource = AllNotes;
-
-            //listNotesBox.DisplayMemberPath = "NContent";
-
-
-
-        }
-
-        //if need refresh, use LoadNotesList()
-
-        private void addNoteBtnClick(object sender, EventArgs e)
-        {
-            SingleNoteStack snp = new SingleNoteStack
-            {
-                Title = "test_INIT",
-                ModifiedDate = DateTime.Now.Ticks,
-                NContent = noteNContext.Text
-
-
-            };
-
-            SqliteDataAccess.SaveNote(snp);
-
-            LoadNotesList();
-
-            noteNContext.Text = "";
-        }
-
-        private void refreshNotesBtnClick(object sender, RoutedEventArgs e)
-        {
-            LoadNotesList();
-        }
+               
 
 
     }
