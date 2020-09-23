@@ -68,7 +68,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Path=NContent}"/>
+                                <TextBlock Text="{Binding NContent}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

@@ -16,7 +16,7 @@ namespace FloatLibrary
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                var output = cnn.Query<SingleNoteStack>("select * from GeneralNotes", new DynamicParameters());
+                var output = cnn.Query<SingleNoteStack>("SELECT * FROM GeneralNotes", new DynamicParameters());
                 return output.ToList();
             }
         }
@@ -25,7 +25,8 @@ namespace FloatLibrary
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into GeneralNotes (Title, ModifiedT, ContentN) values (@Title, @ModifiedDate, @NContent)", note);
+                //cnn.Execute("INSERT INTO GeneralNotes (Title, ModifiedT, ContentN) VALUES (@Title, @ModifiedT, @ContentN)", note);
+                cnn.Execute("INSERT INTO GeneralNotes (Title, ModifiedT, ContentN) VALUES ('test_title', 'time_example', 'some notes')", note);
             }
         }
     

@@ -26,14 +26,14 @@ namespace Float_Notes_win.sub_content
             InitializeComponent();
 
             LoadNotesList();
-            
+
 
         }
 
         private void LoadNotesList()
         {
             AllNotes = SqliteDataAccess.LoadNotes();
-            
+
             WireUpNotesList();
         }
 
@@ -42,13 +42,12 @@ namespace Float_Notes_win.sub_content
             //listNotesBox.DataContext = AllNotes;
             //listNotesBox.DisplayMemberPath = "Title";
 
-            listNotesBox.ItemsSource = null;
             listNotesBox.ItemsSource = AllNotes;
 
             //listNotesBox.DisplayMemberPath = "NContent";
-            
 
-            
+
+
         }
 
         //if need refresh, use LoadNotesList()
@@ -59,8 +58,9 @@ namespace Float_Notes_win.sub_content
             {
                 Title = "test_INIT",
                 ModifiedDate = DateTime.Now.Ticks,
-
                 NContent = noteNContext.Text
+
+
             };
 
             SqliteDataAccess.SaveNote(snp);
@@ -75,7 +75,7 @@ namespace Float_Notes_win.sub_content
             LoadNotesList();
         }
 
-     
+
     }
-    
+
 }
