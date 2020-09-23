@@ -148,41 +148,41 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource-img\notepad.png" />
+    <Resource Include="IMG\resource-img\notepad.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource-img\minimizeLeftIcon.png" />
+    <Resource Include="IMG\resource-img\minimizeLeftIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource-img\bookWhiteIcon.png" />
-    <Resource Include="resource-img\calendarWhiteIcon.png" />
-    <Resource Include="resource-img\clockWhiteIcon.png" />
-    <Resource Include="resource-img\houseWhiteIcon.png" />
-    <Resource Include="resource-img\notebookWhiteIcon.png" />
-    <Resource Include="resource-img\plusCircleWhiteIcon.png" />
-    <Resource Include="resource-img\tasksListWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\bookWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\calendarWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\clockWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\houseWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\notebookWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\plusCircleWhiteIcon.png" />
+    <Resource Include="IMG\resource-img\tasksListWhiteIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource-img\stickyNoteIcon.png" />
+    <Resource Include="IMG\resource-img\stickyNoteIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resource-img\handPointerIcon.png" />
-    <Resource Include="resource-img\displayMonitorIcon.png" />
-    <Resource Include="resource-img\maximizeRightIcon.png" />
-    <Content Include="resource-svg\bookWhite.svg" />
-    <Content Include="resource-svg\calendarWhite.svg" />
-    <Content Include="resource-svg\clockWhite.svg" />
-    <Content Include="resource-svg\displayMonitor.svg" />
-    <Content Include="resource-svg\doubleCheckMark.svg" />
-    <Content Include="resource-svg\handPointer.svg" />
-    <Content Include="resource-svg\houseWhite.svg" />
-    <Content Include="resource-svg\maximizeRight.svg" />
-    <Content Include="resource-svg\minimizeLeft.svg" />
-    <Content Include="resource-svg\notebookWhite.svg" />
-    <Content Include="resource-svg\plusCircleWhite.svg" />
-    <Content Include="resource-svg\stickyNote.svg" />
-    <Content Include="resource-svg\tasksListWhite.svg" />
-    <Resource Include="resource-img\doubleCheckMarkIcon.png" />
+    <Resource Include="IMG\resource-img\handPointerIcon.png" />
+    <Resource Include="IMG\resource-img\displayMonitorIcon.png" />
+    <Resource Include="IMG\resource-img\maximizeRightIcon.png" />
+    <Content Include="IMG\resource-svg\bookWhite.svg" />
+    <Content Include="IMG\resource-svg\calendarWhite.svg" />
+    <Content Include="IMG\resource-svg\clockWhite.svg" />
+    <Content Include="IMG\resource-svg\displayMonitor.svg" />
+    <Content Include="IMG\resource-svg\doubleCheckMark.svg" />
+    <Content Include="IMG\resource-svg\handPointer.svg" />
+    <Content Include="IMG\resource-svg\houseWhite.svg" />
+    <Content Include="IMG\resource-svg\maximizeRight.svg" />
+    <Content Include="IMG\resource-svg\minimizeLeft.svg" />
+    <Content Include="IMG\resource-svg\notebookWhite.svg" />
+    <Content Include="IMG\resource-svg\plusCircleWhite.svg" />
+    <Content Include="IMG\resource-svg\stickyNote.svg" />
+    <Content Include="IMG\resource-svg\tasksListWhite.svg" />
+    <Resource Include="IMG\resource-img\doubleCheckMarkIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="sub-content\" />
