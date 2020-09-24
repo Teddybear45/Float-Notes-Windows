@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,14 +35,15 @@ namespace Float_Notes_win.sub_content
             string sSQL = "SELECT TOP 1 * FROM tbl_GeneralNotes";
             DataTable tbl = clsDB.Get_DataTable(sSQL);
 
-
+            Trace.WriteLine(tbl.Rows);
 
 
         }
 
-                     
-
-
+        private void btn_click_AddNote(object sender, RoutedEventArgs e)
+        {
+            db_Update_Add_GeneralNote("test");
+        }
     }
 
 }
