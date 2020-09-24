@@ -33,5 +33,18 @@ namespace Float_Notes_win.Properties {
                 return ((string)(this["FloatDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\tedgu\\CS\\source\\repo" +
+            "s\\Float-Notes-win\\Data\\db_float.mdf;Integrated Security=True")]
+        public string connection_String {
+            get {
+                return ((string)(this["connection_String"]));
+            }
+            set {
+                this["connection_String"] = value;
+            }
+        }
     }
 }

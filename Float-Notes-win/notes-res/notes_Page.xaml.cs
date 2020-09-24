@@ -24,7 +24,11 @@ namespace Float_Notes_win.sub_content
             InitializeComponent();
 
 
+        }
 
+        private void db_Update_Add_GeneralNote(string note)
+        {
+            
         }
                
 
