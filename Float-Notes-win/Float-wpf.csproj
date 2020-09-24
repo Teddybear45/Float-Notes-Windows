@@ -94,6 +94,7 @@
     <Compile Include="User-Controls\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="_classes\clsDB.cs" />
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -184,10 +185,10 @@
     <Resource Include="IMG\resource-img\handPointerIcon.png" />
     <Resource Include="IMG\resource-img\displayMonitorIcon.png" />
     <Resource Include="IMG\resource-img\maximizeRightIcon.png" />
-    <Content Include="Data\db_float.mdf">
+    <Content Include="_data\db_float.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\db_float_log.ldf">
+    <Content Include="_data\db_float_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_float.mdf</DependentUpon>
     </Content>
@@ -220,12 +221,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LibDB\LibDB.csproj">
-      <Project>{a0088052-2726-4d29-8f79-539878440b44}</Project>
-      <Name>LibDB</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.113.1\build\net46\System.Data.SQLite.Core.targets')" />

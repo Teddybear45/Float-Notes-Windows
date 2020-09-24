@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Float_Notes_win._classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,9 +31,15 @@ namespace Float_Notes_win.sub_content
 
         private void db_Update_Add_GeneralNote(string note)
         {
-            
+            string sSQL = "SELECT TOP 1 * FROM tbl_GeneralNotes";
+            DataTable tbl = clsDB.Get_DataTable(sSQL);
+
+
+
+
         }
-               
+
+                     
 
 
     }
