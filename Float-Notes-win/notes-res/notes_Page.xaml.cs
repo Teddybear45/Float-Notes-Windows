@@ -41,14 +41,14 @@ namespace Float_Notes_win.sub_content
 
             Trace.WriteLine("db_Update_Add_GeneralNote");
 
-            clsDB.Execute_SQL("INSERT INTO tbl_GeneralNotes (GeneralNoteContent) VALUES ('test')");
+            clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
 
 
         }
 
         private void btn_click_AddNote(object sender, RoutedEventArgs e)
         {
-            db_Update_Add_GeneralNote("test70495327849702");
+            db_Update_Add_GeneralNote("testest1212121121313");
         }
     }
 
