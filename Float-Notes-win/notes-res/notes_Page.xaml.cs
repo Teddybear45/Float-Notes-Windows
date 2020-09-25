@@ -32,17 +32,23 @@ namespace Float_Notes_win.sub_content
 
         private void db_Update_Add_GeneralNote(string note)
         {
+
+            //removes notes quotes and puts single quotes for sql read
+            note = note.Replace("'", "''");
+
             string sSQL = "SELECT TOP 1 * FROM tbl_GeneralNotes";
             DataTable tbl = clsDB.Get_DataTable(sSQL);
 
-            Trace.WriteLine(tbl.Rows);
+            Trace.WriteLine("db_Update_Add_GeneralNote");
+
+            clsDB.Execute_SQL("INSERT INTO tbl_GeneralNotes (GeneralNoteContent) VALUES ('test')");
 
 
         }
 
         private void btn_click_AddNote(object sender, RoutedEventArgs e)
         {
-            db_Update_Add_GeneralNote("test");
+            db_Update_Add_GeneralNote("test70495327849702");
         }
     }
 
