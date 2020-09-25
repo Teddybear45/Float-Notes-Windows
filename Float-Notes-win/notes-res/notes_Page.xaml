@@ -60,19 +60,23 @@
                 </TextBox>
 
                 <Button Click="btn_click_AddNote" Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
-                <Button  Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
+                <Button  Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Click="btn_refresh"/>
             </Grid>
             <!--main showing notes-->
             <Grid Grid.Row="2">
-                <ListBox Margin="20" Background="#FF594141" x:Name="listNotesBox">
-                    <ListBox.ItemTemplate>
+                <ListView Margin="20" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="1"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding NContent}"/>
-                            </StackPanel>
+                            <TextBlock Text="{Binding}"/>
                         </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    </ListView.ItemTemplate>
+                </ListView>
  
             </Grid>
 

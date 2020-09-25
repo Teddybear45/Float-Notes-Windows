@@ -43,6 +43,12 @@
 
 
     </Window.Resources>
+    
+    <!-- TODO 
+        - add custom tooltips (hover) styles
+        
+    
+    -->
 
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
