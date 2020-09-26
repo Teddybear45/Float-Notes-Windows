@@ -13,14 +13,12 @@
                 <ResourceDictionary Source="Resource-p/Scrollbar.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
-            
-            
-            
+
         </ResourceDictionary>
 
-
-
+ 
     </Application.Resources>
+    
     
     
     

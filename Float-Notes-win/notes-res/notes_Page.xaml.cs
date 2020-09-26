@@ -81,17 +81,35 @@ namespace Float_Notes_win.sub_content
         {
             db_Update_Add_GeneralNote(new _GeneralNote() {content=GeneralNoteTextbox.Text });
             GeneralNoteTextbox.Text = "";
+
+            //resetting adding notes
+            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
+            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
+            this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
         }
 
-        private void db_GetData_updateList()
-        {
-            
-        }
 
         private void btn_refresh(object sender, RoutedEventArgs e)
         {
             
-            Trace.WriteLine(GeneralNotes);
+            
+        }
+
+        private void GeneralNoteTextbox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 0);
+            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 3);
+            this.Resources["DynamicCreateNoteHeight"] = new GridLength(400);
+            
+
+        }
+
+
+        private void CreateNoteGrid_LostFocus(object sender, RoutedEventArgs e)
+        {
+            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
+            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
+            this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
         }
     }
 
