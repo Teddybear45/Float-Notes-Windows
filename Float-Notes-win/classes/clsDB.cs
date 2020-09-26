@@ -19,6 +19,13 @@ namespace Float_Notes_win._classes
             return cn_connection;
         }
 
+        public static void Close_DB_Connection()
+        {
+            string cn_String = Properties.Settings.Default.connection_String;
+            SqlConnection cn_connection = new SqlConnection(cn_String);
+            if (cn_connection.State != ConnectionState.Closed) cn_connection.Close();
+        }
+
         public static DataTable Get_DataTable(string SQL_Text)
         {
             SqlConnection cn_connection = Get_DB_Connection();
@@ -30,7 +37,7 @@ namespace Float_Notes_win._classes
             cn_connection.Close();
 
             return table;
-            
+
         }
 
         public static void Execute_SQL(string SQL_Text)
@@ -39,13 +46,9 @@ namespace Float_Notes_win._classes
 
             SqlCommand cmd_Command = new SqlCommand(SQL_Text, cn_connection);
             cmd_Command.ExecuteNonQuery();
+
+            cn_connection.Close();
         }
 
-        public static void Close_DB_Connection()
-        {
-            string cn_String = Properties.Settings.Default.connection_String;
-            SqlConnection cn_connection = new SqlConnection(cn_String);
-            if (cn_connection.State != ConnectionState.Closed) cn_connection.Close();
-        }
     }
 }

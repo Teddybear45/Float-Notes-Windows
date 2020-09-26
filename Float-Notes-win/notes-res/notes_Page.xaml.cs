@@ -45,12 +45,6 @@ namespace Float_Notes_win.sub_content
 
         private void db_Update_Add_GeneralNote(_GeneralNote note)
         {
-
-            
-
-            //string sSQL = "SELECT TOP 1 * FROM tbl_GeneralNotes";
-            //DataTable tbl = clsDB.Get_DataTable(sSQL);
-
             Trace.WriteLine("db_Update_Add_GeneralNote");
 
             clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
