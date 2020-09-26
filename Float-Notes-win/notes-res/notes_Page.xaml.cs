@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,8 +32,13 @@ namespace Float_Notes_win.sub_content
         {
             InitializeComponent();
 
-            GeneralNotes.Add(new _GeneralNote() { content = "testtestteste0000" });
+            //GeneralNotes.Add(new _GeneralNote() { content = "1123" });
 
+            db_Refresh_GeneralNotes();
+
+            
+            
+            
             listNotesBox.ItemsSource = GeneralNotes;
             
         }
@@ -49,7 +55,32 @@ namespace Float_Notes_win.sub_content
 
             clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
 
+            db_Refresh_GeneralNotes();
 
+        }
+
+        private void db_Refresh_GeneralNotes()
+        {
+            GeneralNotes.Clear();
+
+            using(SqlConnection con = clsDB.Get_DB_Connection())
+            {
+                using(SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_GeneralNotes", con))
+                {
+                    using(SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                GeneralNotes.Add(new _GeneralNote() { content = reader.GetString(1) });
+                            }
+                        }
+                    }
+                }
+            }
+        
+        
         }
 
         private void btn_click_AddNote(object sender, RoutedEventArgs e)

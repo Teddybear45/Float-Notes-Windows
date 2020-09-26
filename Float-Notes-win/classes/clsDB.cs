@@ -27,7 +27,10 @@ namespace Float_Notes_win._classes
             SqlDataAdapter adapter = new SqlDataAdapter(SQL_Text, cn_connection);
             adapter.Fill(table);
 
+            cn_connection.Close();
+
             return table;
+            
         }
 
         public static void Execute_SQL(string SQL_Text)
