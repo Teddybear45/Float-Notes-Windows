@@ -55,7 +55,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <TextBox x:Name="noteNContext" Margin="10" Background="#FF7C9193" Grid.Row="0" Grid.ColumnSpan="3">
+                <TextBox x:Name="GeneralNoteTextbox" Margin="10" Background="#FF7C9193" Grid.Row="0" Grid.ColumnSpan="3">
 
                 </TextBox>
 

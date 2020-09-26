@@ -12,7 +12,8 @@ namespace Float_Notes_win.classes
 
         public override string ToString()
         {
-            return content.ToString();
+            //removes notes quotes and puts single quotes for sql read
+            return content.ToString().Replace("'", "''"); 
         }
     }
 }
