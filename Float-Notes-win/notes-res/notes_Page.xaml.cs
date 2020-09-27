@@ -46,13 +46,17 @@ namespace Float_Notes_win.sub_content
         }
 
         //returns ID of created
-        private void db_Created_GeneralNote(_GeneralNote note)
+        private int db_Created_GeneralNote(_GeneralNote note)
         {
             Trace.WriteLine("db_Created_GeneralNote");
 
-            clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
+            int insertedID = clsDB.Execute_SQL_ReturnID($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
+
+            Trace.WriteLine(insertedID);
 
             db_Refresh_GeneralNotes();
+
+            return insertedID;
 
         }
 
@@ -84,6 +88,8 @@ namespace Float_Notes_win.sub_content
         {
             AddNoteUsingTextbox();
 
+            CurrentGeneralNoteID = -1;
+
             //resetting adding notes
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
@@ -94,7 +100,9 @@ namespace Float_Notes_win.sub_content
         {
             db_Created_GeneralNote(new _GeneralNote() { content = GeneralNoteTextbox.Text });
             GeneralNoteTextbox.Text = "";
-            CurrentGeneralNoteID = ;
+            
+
+
         }
 
 

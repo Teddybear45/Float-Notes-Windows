@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Float_Notes_win.sub_content"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1000"
-      MouseDown="Page_MouseDown"
       Title="notes_page">
 
     <Page.CommandBindings>
