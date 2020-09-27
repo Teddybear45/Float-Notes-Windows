@@ -28,6 +28,8 @@ namespace Float_Notes_win.sub_content
 
         ObservableCollection<_GeneralNote> GeneralNotes = new ObservableCollection<_GeneralNote>();
 
+        int CurrentGeneralNoteID;
+
         public notes_page()
         {
             InitializeComponent();
@@ -43,9 +45,10 @@ namespace Float_Notes_win.sub_content
             
         }
 
-        private void db_Update_Add_GeneralNote(_GeneralNote note)
+        //returns ID of created
+        private void db_Created_GeneralNote(_GeneralNote note)
         {
-            Trace.WriteLine("db_Update_Add_GeneralNote");
+            Trace.WriteLine("db_Created_GeneralNote");
 
             clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
 
@@ -79,13 +82,19 @@ namespace Float_Notes_win.sub_content
 
         private void btn_click_AddNote(object sender, RoutedEventArgs e)
         {
-            db_Update_Add_GeneralNote(new _GeneralNote() {content=GeneralNoteTextbox.Text });
-            GeneralNoteTextbox.Text = "";
+            AddNoteUsingTextbox();
 
             //resetting adding notes
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
+        }
+
+        private void AddNoteUsingTextbox()
+        {
+            db_Created_GeneralNote(new _GeneralNote() { content = GeneralNoteTextbox.Text });
+            GeneralNoteTextbox.Text = "";
+            CurrentGeneralNoteID = ;
         }
 
 
@@ -101,15 +110,27 @@ namespace Float_Notes_win.sub_content
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 3);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(400);
             
-
+        
         }
-
-
-        private void CreateNoteGrid_LostFocus(object sender, RoutedEventArgs e)
+        
+        
+        private void GeneralNoteTextbox_LostFocus(object sender, RoutedEventArgs e)
         {
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
+        }
+
+        
+
+        private void GeneralNoteTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CurrentGeneralNoteID == -1)
+            {
+
+            }
+            
+            clsDB.Execute_SQL("")
         }
     }
 

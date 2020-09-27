@@ -6,6 +6,7 @@
       xmlns:local="clr-namespace:Float_Notes_win.sub_content"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1000"
+      MouseDown="Page_MouseDown"
       Title="notes_page">
 
     <Page.CommandBindings>
@@ -47,7 +48,7 @@
             </Grid.RowDefinitions>
 
             <!--creating notes-->
-            <Grid Grid.Row="0" Margin="10" x:Name="CreateNoteGrid" LostFocus="CreateNoteGrid_LostFocus">
+            <Grid Grid.Row="0" Margin="10" x:Name="CreateNoteGrid" >
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="4*"/>
@@ -63,42 +64,45 @@
                 <TextBox
                     x:Name="GeneralNoteTextbox" 
                     Margin="10" 
-                    
+                    GotFocus="GeneralNoteTextbox_GotFocus"
+                    LostFocus="GeneralNoteTextbox_LostFocus"
                     Background="#FF7C9193" 
                     Grid.Row="0"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
-                    GotFocus="GeneralNoteTextbox_GotFocus" 
                     
+                    AcceptsReturn="True"
                     TextWrapping="Wrap"
                     
-                    >
+                    TextChanged="GeneralNoteTextbox_TextChanged"
+                    
+                    />
 
-                </TextBox>
 
                 <Button Click="btn_click_AddNote" Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
                 <Button  Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Click="btn_refresh"/>
+                
             </Grid>
+            
             <!--main showing notes-->
             <Grid Grid.Row="2">
-                <ScrollViewer>
-                    <ListView Margin="10" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <UniformGrid Columns="1"/>
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
+                <ListView Margin="10" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}" ScrollViewer.CanContentScroll="False">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="1"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
 
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </ScrollViewer>
-
-
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
+
+
+
 
 
         </Grid>
