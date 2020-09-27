@@ -50,17 +50,7 @@ namespace Float_Notes_win._classes
             cn_connection.Close();
         }
         
-        public static int Execute_SQL_ReturnID(string SQL_Text)
-        {
-            SqlConnection cn_connection = Get_DB_Connection();
-
-            SqlCommand cmd_Command = new SqlCommand(SQL_Text, cn_connection);
-            int ID = cmd_Command.ExecuteNonQuery();
-
-            cn_connection.Close();
-
-            return ID;
-        }
+        
 
         public static int ReadDataID(string queryString)
         {

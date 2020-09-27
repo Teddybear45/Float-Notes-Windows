@@ -43,6 +43,7 @@ namespace Float_Notes_win.sub_content
 
         }
 
+        //takes values from DB and refreshes table
         private void db_Refresh_GeneralNotes()
         {
             GeneralNotes.Clear();
@@ -63,6 +64,8 @@ namespace Float_Notes_win.sub_content
                     }
                 }
             }
+
+            GeneralNotes.Reverse<_GeneralNote>();
 
 
         }
@@ -132,7 +135,12 @@ namespace Float_Notes_win.sub_content
             }
             else
             {
+                clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + GeneralNoteTextbox.Text + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
+
+                db_Refresh_GeneralNotes();
+
                 Trace.WriteLine("else: " + CurrentGeneralNoteID);
+
             }
 
             //clsDB.Execute_SQL("")
