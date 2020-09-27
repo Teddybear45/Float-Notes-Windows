@@ -55,14 +55,42 @@ namespace Float_Notes_win._classes
             SqlConnection cn_connection = Get_DB_Connection();
 
             SqlCommand cmd_Command = new SqlCommand(SQL_Text, cn_connection);
-            cmd_Command.ExecuteNonQuery();
-
-            int insertedID = Convert.ToInt32(cmd_Command.ExecuteScalar());
+            int ID = cmd_Command.ExecuteNonQuery();
 
             cn_connection.Close();
 
-            return insertedID;
+            return ID;
         }
+
+        public static int ReadDataID(string queryString)
+        {
+            int id = -1;
+            using (SqlConnection connection = Get_DB_Connection())
+            {
+                using (SqlCommand command = new SqlCommand(queryString, connection))
+                {
+                    using(SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+
+                            id = reader.GetInt32(0);
+
+                            reader.Close();
+
+                            
+                            
+                        }
+                    }
+                }
+            }
+            return id;
+        }
+
+        
+        
+
         
         
 
