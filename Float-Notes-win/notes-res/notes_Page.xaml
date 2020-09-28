@@ -79,7 +79,6 @@
 
 
                 <Button Click="btn_click_AddNote" Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
-                <Button  Content="Refresh" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Click="btn_refresh"/>
                 
             </Grid>
             
