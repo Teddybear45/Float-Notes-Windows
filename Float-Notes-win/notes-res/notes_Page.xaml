@@ -78,26 +78,43 @@
                     />
 
 
-                <Button Click="btn_click_AddNote" Content="ADD NOTE" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1"/>
                 
             </Grid>
             
             <!--main showing notes-->
             <Grid Grid.Row="2">
-                <ListView Margin="10" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}" ScrollViewer.CanContentScroll="False">
-                    <ListView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <UniformGrid Columns="1"/>
-                        </ItemsPanelTemplate>
-                    </ListView.ItemsPanel>
+                <ScrollViewer>
+                    <ItemsControl x:Name="ListViewGeneralNotes">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="10" Width="100" Height="100" CornerRadius="5">
+                                    <TextBlock Text="{Binding}" Foreground="White" TextWrapping="Wrap"/>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        
+                    </ItemsControl>
+                </ScrollViewer>
             </Grid>
+            
+            <!--
+            
+            <ListView Margin="10" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}" ScrollViewer.CanContentScroll="False">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="1"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            -->
 
 
 

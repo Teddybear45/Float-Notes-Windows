@@ -39,7 +39,7 @@ namespace Float_Notes_win.sub_content
             db_Refresh_GeneralNotes();
 
 
-            listNotesBox.ItemsSource = GeneralNotes;
+            ListViewGeneralNotes.ItemsSource = GeneralNotes;
 
         }
 
@@ -91,19 +91,6 @@ namespace Float_Notes_win.sub_content
 
         }
 
-        private void btn_click_AddNote(object sender, RoutedEventArgs e)
-        {
-
-            CurrentGeneralNoteID = -1;
-            GeneralNoteTextbox.Text = "";
-
-
-            //resetting adding notes
-            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
-            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
-            this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
-        }
-
         private void GeneralNoteTextbox_GotFocus(object sender, RoutedEventArgs e)
         {
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 0);
@@ -114,7 +101,11 @@ namespace Float_Notes_win.sub_content
         }
 
         private void GeneralNoteTextbox_LostFocus(object sender, RoutedEventArgs e)
+
         {
+            CurrentGeneralNoteID = -1;
+            GeneralNoteTextbox.Text = "";
+            
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
