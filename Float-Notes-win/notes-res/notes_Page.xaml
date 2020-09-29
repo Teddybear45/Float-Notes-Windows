@@ -87,39 +87,21 @@
                     <ItemsControl x:Name="ListViewGeneralNotes">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Margin="10" Width="100" Height="100" CornerRadius="5">
+                                <Border Margin="10" Width="300" Height="300" CornerRadius="5" Background="#FF363636">
                                     <TextBlock Text="{Binding}" Foreground="White" TextWrapping="Wrap"/>
 
                                 </Border>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
-                        
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
                     </ItemsControl>
                 </ScrollViewer>
             </Grid>
-            
-            <!--
-            
-            <ListView Margin="10" Background="#FF594141" Name="listNotesBox" BorderBrush="{x:Null}" ScrollViewer.CanContentScroll="False">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="1"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            
-            -->
-
-
-
-
-
         </Grid>
 
 
