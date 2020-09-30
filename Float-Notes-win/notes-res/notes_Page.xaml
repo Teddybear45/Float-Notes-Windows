@@ -14,6 +14,8 @@
     <Page.Resources>
         <GridLength x:Key="DynamicCreateNoteHeight">120</GridLength>
 
+
+
     </Page.Resources>
 
     <Grid Background="Black" Margin="10 0 0 0">
@@ -23,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
@@ -60,6 +62,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
+                <!--general notes add note-->
                 <TextBox
                     x:Name="GeneralNoteTextbox" 
                     Margin="10" 
@@ -76,21 +79,35 @@
                     TextChanged="GeneralNoteTextbox_TextChanged"
                     
                     />
-
-
-                
             </Grid>
-            
+
             <!--main showing notes-->
             <Grid Grid.Row="2">
+                <Grid.Resources>
+                    <Style TargetType="ScrollViewer">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
                 <ScrollViewer>
-                    <ItemsControl x:Name="ListViewGeneralNotes">
+                    <ItemsControl x:Name="ListViewGeneralNotes" IsEnabled="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Margin="10" Width="300" Height="300" CornerRadius="5" Background="#FF363636">
-                                    <TextBlock Text="{Binding}" Foreground="White" TextWrapping="Wrap"/>
+                                <Border Margin="5" CornerRadius="5" MaxHeight="240" MaxWidth="740" Width="300" Background="#FF363636">
 
+                                    <ScrollViewer CanContentScroll="True">
+                                        <TextBlock Text="{Binding content}" MaxHeight="200" MaxWidth="700" Foreground="White" TextWrapping="Wrap" Margin="6"/>
+
+                                    </ScrollViewer>
                                 </Border>
+
+
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                         <ItemsControl.ItemsPanel>

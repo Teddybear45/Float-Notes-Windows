@@ -34,7 +34,6 @@ namespace Float_Notes_win.sub_content
         {
             InitializeComponent();
 
-            //GeneralNotes.Add(new _GeneralNote() { content = "1123" });
 
             db_Refresh_GeneralNotes();
 
@@ -58,7 +57,11 @@ namespace Float_Notes_win.sub_content
                         {
                             while (reader.Read())
                             {
-                                GeneralNotes.Add(new _GeneralNote() { content = reader.GetString(1) });
+                                _GeneralNote nextNote = new _GeneralNote() { content = reader.GetString(1) };
+                                nextNote.update_cHeight();
+                                Trace.WriteLine("after");
+                                GeneralNotes.Add(nextNote);
+                                
                             }
                         }
                     }
@@ -113,17 +116,25 @@ namespace Float_Notes_win.sub_content
 
         private void GeneralNoteTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (GeneralNoteTextbox.Text != "")
+
+            String checkText = GeneralNoteTextbox.Text;
+
+            if (checkText == "'" || checkText == "\"")
+            {
+                checkText += "'";
+            }
+
+            if (checkText != "")
             {
                 if (CurrentGeneralNoteID == -1)
                 {
                     //takes textbox text and creates new _GeneralNote from it
-                    CurrentGeneralNoteID = db_Created_GeneralNote(new _GeneralNote() { content = GeneralNoteTextbox.Text });
+                    CurrentGeneralNoteID = db_Created_GeneralNote(new _GeneralNote() { content = checkText });
 
                 }
                 else
                 {
-                    clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + GeneralNoteTextbox.Text + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
+                    clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + checkText + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
 
                     db_Refresh_GeneralNotes();
                 }
