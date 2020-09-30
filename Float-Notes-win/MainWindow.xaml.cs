@@ -23,13 +23,22 @@ namespace Float_Notes_win
     /// </summary>
     public partial class MainWindow : Window
     {
+        object Key_HomePage = new HomePage();
+        object Key_HistoryPage = new history_page();
+        object Key_NotesPage = new notes_page();
+
+
 
         public MainWindow()
         {
             InitializeComponent();
             //subscribing to events e.g. nameOfComponent.Action += new ActionHandler(.....)
 
-            Main.Content = new HomePage();
+
+
+            Main.Content = Key_HomePage;
+
+
 
 
         }
@@ -38,7 +47,7 @@ namespace Float_Notes_win
         private void MinimizeControlBoardClick(object sender, RoutedEventArgs e)
         {
             this.Resources["DynamicControlBoardWidth"] = new GridLength(95);
-            
+
             //hides max and shows min
             minControlBoardBtn.Visibility = Visibility.Hidden;
             maxControlBoardBtn.Visibility = Visibility.Visible;
@@ -69,11 +78,11 @@ namespace Float_Notes_win
         private void MaxmizeControlBoardClick(object sender, RoutedEventArgs e)
         {
             this.Resources["DynamicControlBoardWidth"] = new GridLength(195);
-            
+
             //hides min and shows max
             minControlBoardBtn.Visibility = Visibility.Visible;
             maxControlBoardBtn.Visibility = Visibility.Hidden;
-            
+
             //shows text of control board
             homeControlBoardText.Visibility = Visibility.Visible;
             historyControlBoardText.Visibility = Visibility.Visible;
@@ -91,18 +100,18 @@ namespace Float_Notes_win
 
         private void HistoryBtnClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new history_page();
+            Main.Content = Key_HistoryPage;
 
         }
 
         private void NotesBtnClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new notes_page();
+            Main.Content = Key_NotesPage;
         }
-        
+
         private void HomeBtnClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new HomePage();
+            Main.Content = Key_HomePage;
 
         }
     }

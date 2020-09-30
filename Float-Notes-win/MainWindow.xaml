@@ -26,7 +26,7 @@
 
         <HorizontalAlignment x:Key="DynamicControlBoardBtnImgAlignment">Left</HorizontalAlignment>
 
-        <Image Source="/resource-img/notepad.png" x:Key="comLogo"/>
+        <Image Source="/IMG/resource-img/notepad.png" x:Key="comLogo"/>
 
         <Style TargetType="Button" x:Key="controlBoardButtons">
 
@@ -43,6 +43,12 @@
 
 
     </Window.Resources>
+    
+    <!-- TODO 
+        - add custom tooltips (hover) styles
+        
+    
+    -->
 
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
@@ -64,7 +70,7 @@
                         <StackPanel Orientation="Horizontal">
 
                             <!--com logo-->
-                            <Image Source="/resource-img/notepad.png"
+                            <Image Source="/IMG/resource-img/notepad.png"
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="26"
@@ -111,7 +117,7 @@
                                     <ColumnDefinition Width="{DynamicResource DynamicPortionControlBoardBtn}"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/houseWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/houseWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -153,7 +159,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/clockWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/clockWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -209,7 +215,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/calendarWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/calendarWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -250,7 +256,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/bookWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/bookWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -309,7 +315,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/notebookWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/notebookWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -350,7 +356,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/tasksListWhiteIcon.png"
+                                <Image Source="/IMG/resource-img/tasksListWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -406,7 +412,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/stickyNoteIcon.png"
+                                <Image Source="/IMG/resource-img/stickyNoteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -447,7 +453,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/doubleCheckMarkIcon.png"
+                                <Image Source="/IMG/resource-img/doubleCheckMarkIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -488,7 +494,7 @@
                                     <ColumnDefinition Width="4*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Image Source="/resource-img/handPointerIcon.png"
+                                <Image Source="/IMG/resource-img/handPointerIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -520,7 +526,7 @@
                             </Style>
                         </Button.Resources>
 
-                        <Image Source="resource-img/minimizeLeftIcon.png"                                    
+                        <Image Source="/IMG/resource-img/minimizeLeftIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"
@@ -543,7 +549,7 @@
                             </Style>
                         </Button.Resources>
 
-                        <Image Source="resource-img/maximizeRightIcon.png"                                    
+                        <Image Source="/IMG/resource-img/maximizeRightIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"

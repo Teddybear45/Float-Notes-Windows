@@ -1,7 +1,13 @@
-﻿using FloatLibrary;
+﻿using Float_Notes_win._classes;
+using Float_Notes_win.classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,53 +25,123 @@ namespace Float_Notes_win.sub_content
 
     public partial class notes_page : Page
     {
-        public List<SingleNoteStack> AllNotes = new List<SingleNoteStack>();
+
+        ObservableCollection<_GeneralNote> GeneralNotes = new ObservableCollection<_GeneralNote>();
+
+        int CurrentGeneralNoteID = -1;
 
         public notes_page()
         {
             InitializeComponent();
-            
+
+            //GeneralNotes.Add(new _GeneralNote() { content = "1123" });
+
+            db_Refresh_GeneralNotes();
+
+
+            ListViewGeneralNotes.ItemsSource = GeneralNotes;
 
         }
 
-        private void LoadNotesList()
+        //takes values from DB and refreshes table
+        private void db_Refresh_GeneralNotes()
         {
-            WireUpNotesList();
+            GeneralNotes.Clear();
+
+            using (SqlConnection con = clsDB.Get_DB_Connection())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_GeneralNotes", con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                GeneralNotes.Add(new _GeneralNote() { content = reader.GetString(1) });
+                            }
+                        }
+                    }
+                }
+            }
+
+            Trace.WriteLine(GeneralNotes + " Before rev");
+
+
+            GeneralNotes.Reverse();
+
+            Trace.WriteLine(GeneralNotes + " After rev");
+
+
         }
 
-        private void WireUpNotesList()
+        //returns ID of created
+        private int db_Created_GeneralNote(_GeneralNote note)
         {
-            //listNotesBox.DataSource = null;
-            //listNotesBox.DataContext = AllNotes;
-            //listNotesBox.DisplayMemberPath = "Title";
 
-            listNotesBox.ItemsSource = null;
-            listNotesBox.ItemsSource = AllNotes;
-            
+            clsDB.Execute_SQL($"INSERT INTO tbl_GeneralNotes (GeneralNoteContent)" + " VALUES ('" + note + "')");
 
-            
+            int insertedID = clsDB.ReadDataID("SELECT MAX(IDGeneralNotes) FROM tbl_GeneralNotes");
+
+            Trace.WriteLine(insertedID + " insertedID");
+
+            db_Refresh_GeneralNotes();
+
+            return insertedID;
+
         }
 
-        //if need refresh, use LoadNotesList()
-
-        private void addNoteBtnClick(object sender, EventArgs e)
+        private void GeneralNoteTextbox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SingleNoteStack snp = new SingleNoteStack();
+            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 0);
+            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 3);
+            this.Resources["DynamicCreateNoteHeight"] = new GridLength(400);
 
-            snp.Title = "test_INIT";
-            snp.ModifiedDate = DateTime.Now.Ticks;
 
-            snp.NContent = noteNContext.Text;
-
-            AllNotes.Add(snp);
-            WireUpNotesList();
-
-            noteNContext.Text = "";
         }
-        
+
+        private void GeneralNoteTextbox_LostFocus(object sender, RoutedEventArgs e)
+
+        {
+            CurrentGeneralNoteID = -1;
+            GeneralNoteTextbox.Text = "";
+            
+            GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
+            GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
+            this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
+        }
+
+        private void GeneralNoteTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (GeneralNoteTextbox.Text != "")
+            {
+                if (CurrentGeneralNoteID == -1)
+                {
+                    //takes textbox text and creates new _GeneralNote from it
+                    CurrentGeneralNoteID = db_Created_GeneralNote(new _GeneralNote() { content = GeneralNoteTextbox.Text });
+
+                }
+                else
+                {
+                    clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + GeneralNoteTextbox.Text + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
+
+                    db_Refresh_GeneralNotes();
+                }
+            }
+
+            else
+            {
+                if (CurrentGeneralNoteID != -1)
+                {
+                    clsDB.Execute_SQL($"DELETE FROM tbl_GeneralNotes WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
+                    CurrentGeneralNoteID = -1;
+
+                    db_Refresh_GeneralNotes();
+                }
+            }
 
 
-
+        }
     }
-    
+
 }
