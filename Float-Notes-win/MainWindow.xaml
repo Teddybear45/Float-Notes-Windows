@@ -63,7 +63,19 @@
 
         <!--control board-->
         <Border BorderBrush="#FF0A0A0C" BorderThickness="10" CornerRadius="20" Grid.Column="0" Margin="0 0 0 0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Border.Resources>
+                <Style TargetType="ScrollViewer">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Resources>
+            <ScrollViewer>
                 <StackPanel Orientation="Vertical" Background="#FF0A0A0C">
                     <!--COM LOGO AND NAME-->
                     <Label Target="{Binding ElementName=com}" Margin="0 0 0 0">
