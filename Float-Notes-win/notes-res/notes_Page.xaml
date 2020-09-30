@@ -68,13 +68,14 @@
                     Margin="10" 
                     GotFocus="GeneralNoteTextbox_GotFocus"
                     LostFocus="GeneralNoteTextbox_LostFocus"
-                    Background="#FF7C9193" 
+                    Background="#FF171717" 
                     Grid.Row="0"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
                     
                     AcceptsReturn="True"
                     TextWrapping="Wrap"
+                    Foreground="White"
                     
                     TextChanged="GeneralNoteTextbox_TextChanged"
                     
@@ -102,7 +103,7 @@
                                 <Border Margin="5" CornerRadius="5" Background="#FF363636">
 
                                     <ScrollViewer CanContentScroll="True">
-                                        <TextBlock Text="{Binding content}" Height="250" MaxWidth="600" MinWidth="300" Foreground="White" TextWrapping="Wrap" Margin="6"/>
+                                        <TextBlock TextTrimming="CharacterEllipsis" Text="{Binding content}" Height="250" MaxWidth="600" MinWidth="300" Foreground="White" TextWrapping="Wrap" Margin="6"/>
 
                                     </ScrollViewer>
                                 </Border>

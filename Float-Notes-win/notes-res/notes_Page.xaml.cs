@@ -85,7 +85,6 @@ namespace Float_Notes_win.sub_content
 
             Trace.WriteLine(insertedID + " insertedID");
 
-            db_Refresh_GeneralNotes();
 
             return insertedID;
 
@@ -109,6 +108,9 @@ namespace Float_Notes_win.sub_content
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
+
+            db_Refresh_GeneralNotes();
+
         }
 
         private void GeneralNoteTextbox_TextChanged(object sender, TextChangedEventArgs e)
@@ -138,7 +140,7 @@ namespace Float_Notes_win.sub_content
                 {
                     clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + checkText + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
 
-                    db_Refresh_GeneralNotes();
+                    
                 }
             }
 
@@ -149,7 +151,6 @@ namespace Float_Notes_win.sub_content
                     clsDB.Execute_SQL($"DELETE FROM tbl_GeneralNotes WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
                     CurrentGeneralNoteID = -1;
 
-                    db_Refresh_GeneralNotes();
                 }
             }
 
