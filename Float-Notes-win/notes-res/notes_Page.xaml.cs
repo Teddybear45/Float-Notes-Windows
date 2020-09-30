@@ -57,11 +57,8 @@ namespace Float_Notes_win.sub_content
                         {
                             while (reader.Read())
                             {
-                                _GeneralNote nextNote = new _GeneralNote() { content = reader.GetString(1) };
-                                nextNote.update_cHeight();
-                                Trace.WriteLine("after");
-                                GeneralNotes.Add(nextNote);
-                                
+                                GeneralNotes.Add(new _GeneralNote() { content = reader.GetString(1) });
+
                             }
                         }
                     }
@@ -108,7 +105,7 @@ namespace Float_Notes_win.sub_content
         {
             CurrentGeneralNoteID = -1;
             GeneralNoteTextbox.Text = "";
-            
+
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
@@ -119,12 +116,17 @@ namespace Float_Notes_win.sub_content
 
             String checkText = GeneralNoteTextbox.Text;
 
-            if (checkText == "'" || checkText == "\"")
-            {
-                checkText += "'";
-            }
+            //if (checkText == "'" || checkText == "\"")
+            //{
+            //    checkText += "'";
+            //}
+            //
+            //if (checkText != "")
+
+            //TODO checktext for sql
 
             if (checkText != "")
+
             {
                 if (CurrentGeneralNoteID == -1)
                 {

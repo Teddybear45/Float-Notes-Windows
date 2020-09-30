@@ -99,10 +99,10 @@
                     <ItemsControl x:Name="ListViewGeneralNotes" IsEnabled="False">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border Margin="5" CornerRadius="5" MaxHeight="240" MaxWidth="740" Width="300" Background="#FF363636">
+                                <Border Margin="5" CornerRadius="5" Background="#FF363636">
 
                                     <ScrollViewer CanContentScroll="True">
-                                        <TextBlock Text="{Binding content}" MaxHeight="200" MaxWidth="700" Foreground="White" TextWrapping="Wrap" Margin="6"/>
+                                        <TextBlock Text="{Binding content}" Height="250" MaxWidth="600" MinWidth="300" Foreground="White" TextWrapping="Wrap" Margin="6"/>
 
                                     </ScrollViewer>
                                 </Border>
