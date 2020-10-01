@@ -64,15 +64,6 @@ namespace Float_Notes_win.sub_content
                     }
                 }
             }
-
-            Trace.WriteLine(GeneralNotes + " Before rev");
-
-
-            GeneralNotes.Reverse();
-
-            Trace.WriteLine(GeneralNotes + " After rev");
-
-
         }
 
         //returns ID of created
@@ -102,6 +93,11 @@ namespace Float_Notes_win.sub_content
         private void GeneralNoteTextbox_LostFocus(object sender, RoutedEventArgs e)
 
         {
+            if (GeneralNoteTextbox.Text != "")
+            {
+                GLOBALS.HistoryTabs.Add(new _HistoryTabs() { ParentTab = GLOBALS.currentTab, Detail = "IDGeneralNotes=" + CurrentGeneralNoteID });
+            }
+            
             CurrentGeneralNoteID = -1;
             GeneralNoteTextbox.Text = "";
 
@@ -110,6 +106,8 @@ namespace Float_Notes_win.sub_content
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
 
             db_Refresh_GeneralNotes();
+
+            
 
         }
 
@@ -140,7 +138,7 @@ namespace Float_Notes_win.sub_content
                 {
                     clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + checkText + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
 
-                    
+
                 }
             }
 

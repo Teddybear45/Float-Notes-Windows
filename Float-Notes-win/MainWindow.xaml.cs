@@ -1,4 +1,5 @@
-﻿using Float_Notes_win.sub_content;
+﻿using Float_Notes_win.classes;
+using Float_Notes_win.sub_content;
 using Float_Notes_win.User_Controls;
 using System;
 using System.Collections.Generic;
@@ -23,9 +24,9 @@ namespace Float_Notes_win
     /// </summary>
     public partial class MainWindow : Window
     {
-        object Key_HomePage = new HomePage();
-        object Key_HistoryPage = new history_page();
-        object Key_NotesPage = new notes_page();
+        Page Key_HomePage = new HomePage();
+        Page Key_HistoryPage = new history_page();
+        Page Key_NotesPage = new notes_page();
 
 
 
@@ -34,12 +35,7 @@ namespace Float_Notes_win
             InitializeComponent();
             //subscribing to events e.g. nameOfComponent.Action += new ActionHandler(.....)
 
-
-
             Main.Content = Key_HomePage;
-
-
-
 
         }
 
@@ -101,17 +97,22 @@ namespace Float_Notes_win
         private void HistoryBtnClick(object sender, RoutedEventArgs e)
         {
             Main.Content = Key_HistoryPage;
+            GLOBALS.currentTab = "HistoryPage";
 
         }
 
         private void NotesBtnClick(object sender, RoutedEventArgs e)
         {
             Main.Content = Key_NotesPage;
+            GLOBALS.currentTab = "NotesPage";
+
+
         }
 
         private void HomeBtnClick(object sender, RoutedEventArgs e)
         {
             Main.Content = Key_HomePage;
+            GLOBALS.currentTab = "HomePage";
 
         }
     }

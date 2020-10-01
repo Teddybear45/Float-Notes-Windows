@@ -79,7 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\_GeneralNote.cs" />
+    <Compile Include="classes\_HistoryTabs.cs" />
     <Compile Include="history-res\history_Page.xaml.cs">
       <DependentUpon>history_Page.xaml</DependentUpon>
     </Compile>
@@ -193,6 +195,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_float.mdf</DependentUpon>
     </Content>
+    <Resource Include="IMG\resource-img\arrowDownIcon.png" />
+    <Content Include="IMG\resource-svg\arrowDown.svg" />
     <Content Include="IMG\resource-svg\bookWhite.svg" />
     <Content Include="IMG\resource-svg\calendarWhite.svg" />
     <Content Include="IMG\resource-svg\clockWhite.svg" />
