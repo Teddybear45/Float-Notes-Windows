@@ -9,6 +9,9 @@
       Title="tasks_Page">
 
     <Grid Background="Black" Margin="10 0 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <TextBlock Foreground="White" Text="tasks" />
 
     </Grid>

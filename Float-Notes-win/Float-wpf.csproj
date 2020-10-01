@@ -196,6 +196,7 @@
     <Resource Include="IMG\resource-img\handPointerIcon.png" />
     <Resource Include="IMG\resource-img\displayMonitorIcon.png" />
     <Resource Include="IMG\resource-img\maximizeRightIcon.png" />
+    <Resource Include="IMG\resource-img\arrowDownIcon.png" />
     <Content Include="data\db_float.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -203,7 +204,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_float.mdf</DependentUpon>
     </Content>
-    <Resource Include="IMG\resource-img\arrowDownIcon.png" />
     <Content Include="IMG\resource-svg\arrowDown.svg" />
     <Content Include="IMG\resource-svg\bookWhite.svg" />
     <Content Include="IMG\resource-svg\calendarWhite.svg" />
