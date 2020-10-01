@@ -1,5 +1,6 @@
 ﻿using Float_Notes_win.classes;
 using Float_Notes_win.sub_content;
+using Float_Notes_win.tasks_res;
 using Float_Notes_win.User_Controls;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace Float_Notes_win
         Page Key_HomePage = new HomePage();
         Page Key_HistoryPage = new history_page();
         Page Key_NotesPage = new notes_page();
+        Page Key_TasksPage = new tasks_Page();
 
 
 
@@ -114,6 +116,12 @@ namespace Float_Notes_win
             Main.Content = Key_HomePage;
             GLOBALS.currentTab = "HomePage";
 
+        }
+
+        private void TasksBtnClick(object sender, RoutedEventArgs e)
+        {
+            Main.Content = Key_TasksPage;
+            GLOBALS.currentTab = "TasksPage";
         }
     }
 }

@@ -72,6 +72,8 @@ namespace Float_Notes_win.sub_content
             }
         }
 
+        //TODO HISTORY PAGE connection to DB and connection to other actions from other tabs
+
 
 
 	

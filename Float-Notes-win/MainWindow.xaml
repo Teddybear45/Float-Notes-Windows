@@ -353,6 +353,7 @@
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF131313"
                             Height="55"
+                            Click="TasksBtnClick"
                         
                         >
                             <!--rounds the corner of the button-->

@@ -82,6 +82,7 @@
     <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\_GeneralNote.cs" />
     <Compile Include="classes\_HistoryTabs.cs" />
+    <Compile Include="classes\_Tasks.cs" />
     <Compile Include="history-res\history_Page.xaml.cs">
       <DependentUpon>history_Page.xaml</DependentUpon>
     </Compile>
@@ -90,6 +91,9 @@
     </Compile>
     <Compile Include="notes-res\notes_Page.xaml.cs">
       <DependentUpon>notes_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tasks-res\tasks_Page.xaml.cs">
+      <DependentUpon>tasks_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="User-Controls\ControlBoardBtn.xaml.cs">
       <DependentUpon>ControlBoardBtn.xaml</DependentUpon>
@@ -127,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="notes-res\notes_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tasks-res\tasks_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
