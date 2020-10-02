@@ -35,13 +35,12 @@ namespace Float_Notes_win.tasks_res
         {
             _TaskItem task = new _TaskItem();
             task.TaskContent = "test test new task task content content 1234";
+            task.TaskPopTime = DateTime.Now.AddMinutes(2);
 
             GLOBALS.Tasks.Add(task);
 
-            var xmlTask = GLOBALS.ObjectToXMLGeneric<_TaskItem>(task);
-            Trace.WriteLine(xmlTask);
-
-            clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskInfo)" + " VALUES ('" + xmlTask + "')");
+            
+            clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskContent, TaskPopTime)" + " VALUES ('" + task.TaskContent + "', + '" + task.TaskPopTime + "')");
             
 
         }

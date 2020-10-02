@@ -11,6 +11,8 @@ namespace Float_Notes_win.classes
     {
         public String TaskContent { get; set; }
 
+        public DateTime TaskPopTime { get; set; }
+
         
     }
 }
