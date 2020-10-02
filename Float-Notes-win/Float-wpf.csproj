@@ -82,7 +82,7 @@
     <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\_GeneralNote.cs" />
     <Compile Include="classes\_HistoryTabs.cs" />
-    <Compile Include="classes\_Tasks.cs" />
+    <Compile Include="classes\_TaskItem.cs" />
     <Compile Include="history-res\history_Page.xaml.cs">
       <DependentUpon>history_Page.xaml</DependentUpon>
     </Compile>

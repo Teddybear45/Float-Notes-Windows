@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Float_Notes_win.classes
 {
-    class _Tasks
+    [Serializable]
+    public class _TaskItem
     {
+        public String TaskContent { get; set; }
+
+        
     }
 }

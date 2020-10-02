@@ -11,7 +11,7 @@
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\FloatDB.mdf;Integrated Security=True</Value>
     </Setting>
     <Setting Name="connection_String" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tedgu\CS\source\repos\Float-Notes-win\Data\db_float.mdf;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tedgu\CS\vs-projects\source\repos\Solution_FloatNotes\Float-Notes-Windows\Float-Notes-win\data\db_float.mdf;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

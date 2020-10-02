@@ -69,8 +69,6 @@ namespace Float_Notes_win._classes
 
                             reader.Close();
 
-                            
-                            
                         }
                     }
                 }

@@ -11,8 +11,11 @@
     <Grid Background="Black" Margin="10 0 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Foreground="White" Text="tasks" />
+        
+
+        <Button Click="createTaskBtn" Content="create task" />
 
     </Grid>
 </Page>
