@@ -187,6 +187,19 @@
                         </StackPanel>
 
                     </RadioButton>
+                    <RadioButton Height="35" Margin="2 0" VerticalAlignment="Center" Grid.Column="0" Style="{StaticResource {x:Type ToggleButton}}" Background="#FF282F3C" BorderBrush="#FF282F3C" >
+                        <RadioButton.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="2"/>
+                            </Style>
+                        </RadioButton.Resources>
+
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="In 2 Hours" Foreground="White" FontSize="10" />
+
+                        </StackPanel>
+
+                    </RadioButton>
 
                 </Grid>
 
