@@ -107,7 +107,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                             x:Name="homeControlPanelBtn"
                             Click="HomeBtnClick"
@@ -154,7 +154,7 @@
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Height="55"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Click="HistoryBtnClick"
                         
                         >
@@ -210,7 +210,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                         
                         >
@@ -251,7 +251,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                         
                         >
@@ -309,7 +309,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                             Click="NotesBtnClick"
                         
@@ -351,7 +351,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                             Click="TasksBtnClick"
                         
@@ -408,7 +408,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                         
                         >
@@ -449,7 +449,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                         
                         >
@@ -490,7 +490,7 @@
                         <!--content-->
                         <Button 
                             Style="{StaticResource controlBoardButtons}"
-                            Background="#FF131313"
+                            Background="#FF0E1215"
                             Height="55"
                         
                         >

@@ -19,6 +19,9 @@ namespace Float_Notes_win.classes
 
         //tasks
         internal static ObservableCollection<_TaskItem> Tasks = new ObservableCollection<_TaskItem>();
+
+        //tags
+        internal static ObservableCollection<_TagItem> Tags = new ObservableCollection<_TagItem>();
         
     }
 

@@ -10,13 +10,136 @@
 
     <Grid Background="Black" Margin="10 0 0 0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
             <RowDefinition Height="2*" />
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="14*" />
         </Grid.RowDefinitions>
-        
 
-        
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="3">
+                <TextBlock Text="Tags" FontSize="35" Foreground="White" HorizontalAlignment="Center"/>
+            </Grid>
+
+            <Border BorderBrush="Transparent" BorderThickness="2" CornerRadius="4" Grid.Column="1" Margin="3">
+                <Grid >
+                    <Grid.Resources>
+                        <Style TargetType="ScrollViewer">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <ScrollViewer>
+                        <ItemsControl x:Name="ListViewTasksTags" IsEnabled="False">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Margin="2" CornerRadius="2" Background="#FF363636">
+
+                                        <ScrollViewer CanContentScroll="True">
+                                            <TextBlock Text="{Binding Definition}" Height="20" MaxWidth="350" MinWidth="50" FontSize="14" VerticalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis" Margin="4"/>
+
+                                        </ScrollViewer>
+                                    </Border>
+                                </DataTemplate>
+
+                            </ItemsControl.ItemTemplate>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+
+
+        <Border Grid.Row="1" BorderBrush="#FF1E1E23" BorderThickness="5" CornerRadius="10" Margin="10 10 10 0">
+
+            <Grid Background="#FF1E1E23">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" BorderBrush="{x:Null}" Background="#FF282F3C" Margin="3" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="Font Size" Foreground="white" FontSize="15"/>
+                    </Button>
+                    <Button Grid.Column="1" BorderBrush="{x:Null}" Background="#FF282F3C" Margin="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="Font Size" Foreground="white" FontSize="15"/>
+                    </Button>
+                    <Button Grid.Column="2" BorderBrush="{x:Null}" Background="#FF282F3C" Margin="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="Small" Foreground="white" FontSize="15"/>
+                    </Button>
+                    <Button Grid.Column="3" BorderBrush="{x:Null}" Background="#FF282F3C" Margin="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="Change value" Foreground="white" FontSize="15"/>
+                    </Button>
+                    <Button Grid.Column="4" BorderBrush="{x:Null}" Background="#FF282F3C" Margin="3">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+                        <TextBlock Text="Search Bar" Foreground="white" FontSize="15"/>
+                    </Button>
+
+                </Grid>
+
+                <Grid Grid.Row="1" >
+                    <Border BorderBrush="#FF0A0A0C" BorderThickness="3" CornerRadius="6" >
+                        <TextBox BorderBrush="#FF0A0A0C" Background="#FF0A0A0C" Foreground="White">
+                            
+                        </TextBox>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+
+
+
 
     </Grid>
 </Page>
