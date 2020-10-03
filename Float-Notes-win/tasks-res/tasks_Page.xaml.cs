@@ -62,7 +62,7 @@ namespace Float_Notes_win.tasks_res
         private void createTaskBtn(object sender, RoutedEventArgs e)
         {
             _TaskItem task = new _TaskItem();
-            task.TaskContent = "test test new task task content content 1234";
+            task.TaskContent = CreateTaskTextBox.Text;
             task.TaskPopTime = DateTime.Now.AddMinutes(2);
 
             GLOBALS.Tasks.Add(task);

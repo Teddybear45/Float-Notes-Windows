@@ -11,12 +11,8 @@
         Title="MainWindow" Height="1080" Width="1200" WindowStartupLocation="CenterScreen">
     <!-- AllowsTransparency="True"-->
 
-
-
-
     <Window.Resources>
         <sys:String x:Key="comName">Float Notes</sys:String>
-
 
         <!--width of control board-->
         <GridLength x:Key="DynamicControlBoardWidth">195</GridLength>
@@ -37,15 +33,11 @@
 
         </Style>
 
-
-
-
-
-
     </Window.Resources>
-    
+
     <!-- TODO 
         - add custom tooltips (hover) styles
+        - add support for 1440 vertical px for max and min buttons/ no stack panel
         
     
     -->
@@ -76,13 +68,14 @@
                 </Style>
             </Border.Resources>
             <ScrollViewer>
-                <StackPanel Orientation="Vertical" Background="#FF0A0A0C">
-                    <!--COM LOGO AND NAME-->
-                    <Label Target="{Binding ElementName=com}" Margin="0 0 0 0">
-                        <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <StackPanel Orientation="Vertical" Background="#FF0A0A0C">
+                        <!--COM LOGO AND NAME-->
+                        <Label Target="{Binding ElementName=com}" Margin="0 0 0 0">
+                            <StackPanel Orientation="Horizontal">
 
-                            <!--com logo-->
-                            <Image Source="/IMG/resource-img/notepad.png"
+                                <!--com logo-->
+                                <Image Source="/IMG/resource-img/notepad.png"
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="26"
@@ -92,20 +85,20 @@
                                 HorizontalAlignment="Center"
                                    />
 
-                            <!--com name-->
-                            <TextBlock FontWeight="Medium" FontSize="20" VerticalAlignment="Center" Text="{StaticResource comName}" Foreground="#fdfdfd"/>
+                                <!--com name-->
+                                <TextBlock FontWeight="Medium" FontSize="20" VerticalAlignment="Center" Text="{StaticResource comName}" Foreground="#fdfdfd"/>
 
-                        </StackPanel>
-                    </Label>
+                            </StackPanel>
+                        </Label>
 
-                    <!--control elements-->
+                        <!--control elements-->
 
-                    <!--HOME-->
-                    <StackPanel Orientation="Horizontal" Margin="0 40 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--HOME-->
+                        <StackPanel Orientation="Horizontal" Margin="0 40 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
@@ -113,23 +106,23 @@
                             Click="HomeBtnClick"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="55" x:Name="homeControlBoardBtnGrid">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="{DynamicResource DynamicPortionControlBoardBtn}"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="55" x:Name="homeControlBoardBtnGrid">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="{DynamicResource DynamicPortionControlBoardBtn}"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/houseWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/houseWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -140,38 +133,38 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="homeControlBoardText" Grid.Column="1" Text="Home" HorizontalAlignment="Left" Margin="5,14,0,13" FontWeight="Normal" FontSize="22" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="homeControlBoardText" Grid.Column="1" Text="Home" HorizontalAlignment="Left" Margin="5,14,0,13" FontWeight="Normal" FontSize="22" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
-                    <!--HISTORY-->
-                    <StackPanel Orientation="Horizontal">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83" RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--HISTORY-->
+                        <StackPanel Orientation="Horizontal">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83" RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Height="55"
                             Background="#FF0E1215"
                             Click="HistoryBtnClick"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="45">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="45">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/clockWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/clockWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -182,52 +175,52 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="historyControlBoardText" Grid.Column="1" Text="History" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="22" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="historyControlBoardText" Grid.Column="1" Text="History" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="22" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+
+                        <!--OVERVIEW LABEL-->
+                        <Label Margin="0 25 0 5">
+                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="Overview" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+
+                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
                             </Grid>
-                        </Button>
-                    </StackPanel>
+                        </Label>
 
-                    <!--OVERVIEW LABEL-->
-                    <Label Margin="0 25 0 5">
-                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Grid.Row="0" Text="Overview" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
-
-                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
-
-                        </Grid>
-                    </Label>
-
-                    <!--CALENDAR OVERVIEW-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--CALENDAR OVERVIEW-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="40">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="40">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/calendarWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/calendarWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -238,37 +231,37 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="calendarControlBoardText" Grid.Column="1" Text="Calendar" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="calendarControlBoardText" Grid.Column="1" Text="Calendar" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
-                    <!--CLASS OVERVIEW-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--CLASS OVERVIEW-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="40">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="40">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/bookWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/bookWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -279,55 +272,55 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="classesControlBoardText" Grid.Column="1" Text="Classes" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="classesControlBoardText" Grid.Column="1" Text="Classes" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+
+
+
+                        <!--GENERAL LABEL-->
+                        <Label Margin="0 15 0 5">
+                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="General" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+
+                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
                             </Grid>
-                        </Button>
-                    </StackPanel>
+                        </Label>
 
-
-
-                    <!--GENERAL LABEL-->
-                    <Label Margin="0 15 0 5">
-                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Grid.Row="0" Text="General" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
-
-                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
-
-                        </Grid>
-                    </Label>
-
-                    <!--NOTES OVERVIEW-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--NOTES OVERVIEW-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                             Click="NotesBtnClick"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="40">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="40">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/notebookWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/notebookWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -338,38 +331,38 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="notesControlBoardText" Grid.Column="1" Text="Notes" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="notesControlBoardText" Grid.Column="1" Text="Notes" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
-                    <!--TASKS OVERVIEW-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--TASKS OVERVIEW-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                             Click="TasksBtnClick"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="40">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="40">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/tasksListWhiteIcon.png"
+                                    <Image Source="/IMG/resource-img/tasksListWhiteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -380,52 +373,52 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="tasksControlBoardText" Grid.Column="1" Text="Tasks" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="tasksControlBoardText" Grid.Column="1" Text="Tasks" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="20" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+
+                        <!--CREATE LABEL-->
+                        <Label Margin="0 15 0 5">
+                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock Grid.Row="0" Text="Create" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+
+                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#66CD9BFF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
                             </Grid>
-                        </Button>
-                    </StackPanel>
+                        </Label>
 
-                    <!--CREATE LABEL-->
-                    <Label Margin="0 15 0 5">
-                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="1*"/>
-                            </Grid.RowDefinitions>
-
-                            <TextBlock Grid.Row="0" Text="Create" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
-
-                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#66CD9BFF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
-
-                        </Grid>
-                    </Label>
-
-                    <!--CREATE NOTE-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--CREATE NOTE-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="50">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/stickyNoteIcon.png"
+                                    <Image Source="/IMG/resource-img/stickyNoteIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -436,37 +429,37 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="plusNoteControlBoardText" Grid.Column="1" Text="Note" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="plusNoteControlBoardText" Grid.Column="1" Text="Note" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
-                    <!--CREATE TASK-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--CREATE TASK-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="50">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/doubleCheckMarkIcon.png"
+                                    <Image Source="/IMG/resource-img/doubleCheckMarkIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -477,37 +470,37 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="plusTaskControlBoardText" Grid.Column="1" Text="Task" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="plusTaskControlBoardText" Grid.Column="1" Text="Task" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
-                    <!--CREATE REMINDER-->
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <!--status content-->
-                        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
-                        <!--content-->
-                        <Button 
+                        <!--CREATE REMINDER-->
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                            <!--status content-->
+                            <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+                            <!--content-->
+                            <Button 
                             Style="{StaticResource controlBoardButtons}"
                             Background="#FF0E1215"
                             Height="55"
                         
                         >
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                                <!--rounds the corner of the button-->
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </Button.Resources>
 
-                            <Grid Width="135" Height="50">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
-                                    <ColumnDefinition Width="4*"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Width="135" Height="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <Image Source="/IMG/resource-img/handPointerIcon.png"
+                                    <Image Source="/IMG/resource-img/handPointerIcon.png"
                                     RenderOptions.BitmapScalingMode="Fant"
                                     Stretch="Fill"
                                     Width="32"
@@ -518,28 +511,28 @@
                                     Grid.Column="0"
                                 
                                 />
-                                <TextBlock x:Name="plusReminderControlBoardText" Grid.Column="1" Text="Reminder" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                                    <TextBlock x:Name="plusReminderControlBoardText" Grid.Column="1" Text="Reminder" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
-                            </Grid>
-                        </Button>
-                    </StackPanel>
-
-                    
-                    <!--USER CONTROL IMAGE AND TEXT FOR CONTROL BOARD BUTTONS todo-->
-                    <uc:ControlBoardBtn />
+                                </Grid>
+                            </Button>
+                        </StackPanel>
 
 
-                    <!--minimize-->
-                    <Button Width="44" Height="44" Margin="100 50 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MinimizeControlBoardClick" x:Name="minControlBoardBtn" >
+                        <!--USER CONTROL IMAGE AND TEXT FOR CONTROL BOARD BUTTONS todo-->
+                        <uc:ControlBoardBtn />
 
-                        <!--rounds the corner of the button-->
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="5"/>
-                            </Style>
-                        </Button.Resources>
 
-                        <Image Source="/IMG/resource-img/minimizeLeftIcon.png"                                    
+                        <!--minimize-->
+                        <Button Width="44" Height="44" Margin="100 50 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MinimizeControlBoardClick" x:Name="minControlBoardBtn" >
+
+                            <!--rounds the corner of the button-->
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+
+                            <Image Source="/IMG/resource-img/minimizeLeftIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"
@@ -550,19 +543,19 @@
                                
                                />
 
-                    </Button>
+                        </Button>
 
-                    <!--maximize-->
-                    <Button Width="44" Height="44" Margin="0 -44 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MaxmizeControlBoardClick" x:Name="maxControlBoardBtn" Visibility="Hidden">
+                        <!--maximize-->
+                        <Button Width="44" Height="44" Margin="0 -44 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MaxmizeControlBoardClick" x:Name="maxControlBoardBtn" Visibility="Hidden">
 
-                        <!--rounds the corner of the button-->
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="5"/>
-                            </Style>
-                        </Button.Resources>
+                            <!--rounds the corner of the button-->
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
 
-                        <Image Source="/IMG/resource-img/maximizeRightIcon.png"                                    
+                            <Image Source="/IMG/resource-img/maximizeRightIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"
@@ -573,21 +566,15 @@
                                
                                />
 
-                    </Button>
+                        </Button>
 
+                    </StackPanel>
 
-
-
-
-                </StackPanel>
+                </Grid>
             </ScrollViewer>
         </Border>
 
-
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.ColumnSpan="2"/>
-
-
-
 
         <!--
         
