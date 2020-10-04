@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:control="clr-namespace:Float_Notes_win.controls"
         
         mc:Ignorable="d"
 
@@ -517,8 +518,10 @@
                         </StackPanel>
 
 
-                        <!--USER CONTROL IMAGE AND TEXT FOR CONTROL BOARD BUTTONS todo-->
                         
+
+
+
 
 
                         <!--minimize-->
