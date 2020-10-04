@@ -517,10 +517,8 @@
                             </Button>
                         </StackPanel>
 
-
+                        <TextBlock Text="fdasd" Foreground="White"/>
                         
-
-
 
 
 
@@ -567,9 +565,7 @@
                                 HorizontalAlignment="Center"
                                
                                />
-
                         </Button>
-
                     </StackPanel>
 
                 </Grid>

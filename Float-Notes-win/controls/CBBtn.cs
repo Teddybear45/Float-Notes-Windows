@@ -50,5 +50,6 @@ namespace Float_Notes_win.controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CBBtn), new FrameworkPropertyMetadata(typeof(CBBtn)));
         }
+
     }
 }
