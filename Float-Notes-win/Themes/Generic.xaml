@@ -1,0 +1,28 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Float_Notes_win.controls">
+
+    <!--Control Board Stack Panel-->
+    <Style TargetType="{x:Type local:CBSP}" BasedOn="{StaticResource {x:Type StackPanel}}">
+        
+    </Style>
+    
+    <!--Control Board Button-->
+    <Style TargetType="{x:Type local:CBBtn}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="Height" Value="55" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="10 0 0 0"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="Background" Value="#FF0E1215"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+
+    </Style>
+
+
+</ResourceDictionary>

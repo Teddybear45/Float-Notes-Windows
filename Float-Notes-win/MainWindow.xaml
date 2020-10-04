@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:uc="clr-namespace:Float_Notes_win.User_Controls"
         
         mc:Ignorable="d"
 
@@ -486,7 +485,7 @@
                             Background="#FF0E1215"
                             Height="55"
                         
-                        >
+                            >
                                 <!--rounds the corner of the button-->
                                 <Button.Resources>
                                     <Style TargetType="Border">
@@ -519,7 +518,7 @@
 
 
                         <!--USER CONTROL IMAGE AND TEXT FOR CONTROL BOARD BUTTONS todo-->
-                        <uc:ControlBoardBtn />
+                        
 
 
                         <!--minimize-->
