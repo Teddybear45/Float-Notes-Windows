@@ -81,8 +81,6 @@
     <Compile Include="classes\_HistoryTabs.cs" />
     <Compile Include="classes\_TagItem.cs" />
     <Compile Include="classes\_TaskItem.cs" />
-    <Compile Include="controls\CBBtn.cs" />
-    <Compile Include="controls\CBSP.cs" />
     <Compile Include="history-res\history_Page.xaml.cs">
       <DependentUpon>history_Page.xaml</DependentUpon>
     </Compile>
@@ -96,9 +94,6 @@
       <DependentUpon>tasks_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="classes\clsDB.cs" />
-    <Compile Include="user-controls\CBBtnImg_UC.xaml.cs">
-      <DependentUpon>CBBtnImg_UC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="user-controls\CBBtn_UC.xaml.cs">
       <DependentUpon>CBBtn_UC.xaml</DependentUpon>
     </Compile>
@@ -131,14 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="tasks-res\tasks_Page.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="user-controls\CBBtnImg_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
