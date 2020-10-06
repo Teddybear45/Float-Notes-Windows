@@ -36,7 +36,11 @@ namespace Float_Notes_win
             InitializeComponent();
             //subscribing to events e.g. nameOfComponent.Action += new ActionHandler(.....)
 
+            //initializes content when loaded to be of main
             Main.Content = Key_HomePage;
+
+            CBCtrlBtnTest.BtnImg.Source = new BitmapImage(new Uri (@"\IMG/resource-img\doubleCheckMarkIcon.png", UriKind.Relative));
+            CBCtrlBtnTest.BtnTxt.Text = "New Test";
 
         }
 

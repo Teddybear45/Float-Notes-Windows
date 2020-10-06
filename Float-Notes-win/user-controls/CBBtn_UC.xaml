@@ -6,10 +6,10 @@
              xmlns:local="clr-namespace:Float_Notes_win.user_controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <!--CREATE REMINDER-->
+    
     <StackPanel Orientation="Horizontal">
         <!--status content-->
-        <Rectangle Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
+        <Rectangle Name="Status" Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1"/>
         <!--content-->
         <Button 
             Width="150"
@@ -33,17 +33,16 @@
                     <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
 
-                <local:CBBtnImg_UC />
-
-                <Image Source="/IMG/resource-img/handPointerIcon.png"
+                <Image
                     RenderOptions.BitmapScalingMode="Fant"
                     Stretch="Fill"
                     Width="32"
                     Height="32"
                     HorizontalAlignment="Left"
                     Grid.Column="0"  
+                    Name="BtnImg"
                         />
-                <TextBlock Grid.Column="1" Text="Test" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                <TextBlock Name="BtnTxt" Grid.Column="1" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
 
             </Grid>
         </Button>

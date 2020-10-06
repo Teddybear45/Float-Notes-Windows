@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:control="clr-namespace:Float_Notes_win.controls"
+        xmlns:control="clr-namespace:Float_Notes_win.user_controls"
+        
         
         mc:Ignorable="d"
 
@@ -517,8 +518,8 @@
                             </Button>
                         </StackPanel>
 
-                        <TextBlock Text="fdasd" Foreground="White"/>
-                        
+                        <control:CBBtn_UC x:Name="CBCtrlBtnTest"/>
+
 
 
 
