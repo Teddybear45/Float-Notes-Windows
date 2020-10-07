@@ -47,35 +47,35 @@ namespace Float_Notes_win
 
         private void InitializeControlBoard()
         {
-            CBCtrlHome.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/houseWhiteIcon.png", UriKind.Relative));
-            CBCtrlHome.BtnTxt.Text = "Home";
+            //CBCtrlHome.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/houseWhiteIcon.png", UriKind.Relative));
+            //CBCtrlHome.BtnTxt.Text = "Home";
 
-            CBCtrlHistory.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/clockWhiteIcon.png", UriKind.Relative));
-            CBCtrlHistory.BtnTxt.Text = "History";
+            //CBCtrlHistory.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/clockWhiteIcon.png", UriKind.Relative));
+            //CBCtrlHistory.BtnTxt.Text = "History";
 
-            CBCtrlCalendar.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/calendarWhiteIcon.png", UriKind.Relative));
-            CBCtrlCalendar.BtnTxt.Text = "Calendar";
+            //CBCtrlCalendar.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/calendarWhiteIcon.png", UriKind.Relative));
+            //CBCtrlCalendar.BtnTxt.Text = "Calendar";
 
-            CBCtrlClassOverview.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/bookWhiteIcon.png", UriKind.Relative));
-            CBCtrlClassOverview.BtnTxt.Text = "Class";
+            //CBCtrlClassOverview.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/bookWhiteIcon.png", UriKind.Relative));
+            //CBCtrlClassOverview.BtnTxt.Text = "Class";
 
-            CBCtrlNotes.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/notebookWhiteIcon.png", UriKind.Relative));
-            CBCtrlNotes.BtnTxt.Text = "Notes";
+            //CBCtrlNotes.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/notebookWhiteIcon.png", UriKind.Relative));
+            //CBCtrlNotes.BtnTxt.Text = "Notes";
 
-            CBCtrlTasks.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/tasksListWhiteIcon.png", UriKind.Relative));
-            CBCtrlTasks.BtnTxt.Text = "Tasks";
+            //CBCtrlTasks.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/tasksListWhiteIcon.png", UriKind.Relative));
+            //CBCtrlTasks.BtnTxt.Text = "Tasks";
 
-            CBCtrlCreateNote.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/stickyNoteIcon.png", UriKind.Relative));
-            CBCtrlCreateNote.BtnTxt.Text = "Note";
+            //CBCtrlCreateNote.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/stickyNoteIcon.png", UriKind.Relative));
+            //CBCtrlCreateNote.BtnTxt.Text = "Note";
 
-            CBCtrlCreateTask.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/doubleCheckMarkIcon.png", UriKind.Relative));
-            CBCtrlCreateTask.BtnTxt.Text = "Task";
+            //CBCtrlCreateTask.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/doubleCheckMarkIcon.png", UriKind.Relative));
+            //CBCtrlCreateTask.BtnTxt.Text = "Task";
 
-            CBCtrlCreateReminder.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/handPointerIcon.png", UriKind.Relative));
-            CBCtrlCreateReminder.BtnTxt.Text = "Reminder";
+            //CBCtrlCreateReminder.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/handPointerIcon.png", UriKind.Relative));
+            //CBCtrlCreateReminder.BtnTxt.Text = "Reminder";
 
-            CBCtrlCreateMeeting.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/displayMonitorIcon.png", UriKind.Relative));
-            CBCtrlCreateMeeting.BtnTxt.Text = "Meeting";
+            //CBCtrlCreateMeeting.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/displayMonitorIcon.png", UriKind.Relative));
+            //CBCtrlCreateMeeting.BtnTxt.Text = "Meeting";
 
             CBItems.Add(CBCtrlHome);
             CBItems.Add(CBCtrlHistory);
@@ -103,16 +103,16 @@ namespace Float_Notes_win
             //hides text of control board
             foreach (CBBtn_UC CB in CBItems)
             {
-                CB.BtnTxt.Visibility = Visibility.Hidden;
+                //CB.BtnTxt.Visibility = Visibility.Hidden;
                 
-                //changes to button and grid and image and img alignment inside each segment of control board
-                CB.BtnGridLen2.Width = new GridLength(0);
-                CB.BtnImg.HorizontalAlignment = HorizontalAlignment.Center;
+                ////changes to button and grid and image and img alignment inside each segment of control board
+                //CB.BtnGridLen2.Width = new GridLength(0);
+                //CB.BtnImg.HorizontalAlignment = HorizontalAlignment.Center;
 
-                CB.BtnGrid.Width = (Double)50;
-                CB.Btn.Width = (Double)55;
+                //CB.BtnGrid.Width = (Double)50;
+                //CB.Btn.Width = (Double)55;
 
-                CB.Status.Margin = new Thickness(-15, 0, 0, 0);
+                //CB.Status.Margin = new Thickness(-15, 0, 0, 0);
 
             }
         }
@@ -129,16 +129,16 @@ namespace Float_Notes_win
             //hides text of control board
             foreach (CBBtn_UC CB in CBItems)
             {
-                CB.BtnTxt.Visibility = Visibility.Visible;
+                //CB.BtnTxt.Visibility = Visibility.Visible;
 
-                //changes to button and grid and image and img alignment inside each segment of control board
-                CB.BtnGridLen2.Width = new GridLength(4, GridUnitType.Star);
-                CB.BtnImg.HorizontalAlignment = HorizontalAlignment.Left;
+                ////changes to button and grid and image and img alignment inside each segment of control board
+                //CB.BtnGridLen2.Width = new GridLength(4, GridUnitType.Star);
+                //CB.BtnImg.HorizontalAlignment = HorizontalAlignment.Left;
 
-                CB.BtnGrid.Width = (Double)135;
-                CB.Btn.Width = (Double)150;
+                //CB.BtnGrid.Width = (Double)135;
+                //CB.Btn.Width = (Double)150;
 
-                CB.Status.Margin = new Thickness(-35, 0, 0, 0);
+                //CB.Status.Margin = new Thickness(-35, 0, 0, 0);
             }
 
         }
@@ -148,14 +148,6 @@ namespace Float_Notes_win
         {
             Main.Content = Key_HistoryPage;
             GLOBALS.currentTab = "HistoryPage";
-
-        }
-
-        private void NotesBtnClick(object sender, RoutedEventArgs e)
-        {
-            Main.Content = Key_NotesPage;
-            GLOBALS.currentTab = "NotesPage";
-
 
         }
 
@@ -170,6 +162,12 @@ namespace Float_Notes_win
         {
             Main.Content = Key_TasksPage;
             GLOBALS.currentTab = "TasksPage";
+        }
+
+        private void CBCtrlNotes_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = Key_NotesPage;
+            GLOBALS.currentTab = "NotesPage";
         }
     }
 }

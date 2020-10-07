@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Float_Notes_win.user_controls"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="200"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
              >
 
 
@@ -13,10 +14,10 @@
         Width="150"
         Height="55"
         Background="#FF0E1215"
-        Margin="10 0 0 0"
+        Margin="10 10 0 0"
         BorderBrush="{x:Null}"
         x:Name="Btn"
-       
+        Click="Btn_Click"
             >
         <!--rounds the corner of the button-->
         <Button.Resources>
@@ -24,13 +25,14 @@
                 <Setter Property="CornerRadius" Value="5"/>
             </Style>
         </Button.Resources>
+        
         <StackPanel Orientation="Horizontal">
             <!--status content-->
-            <Rectangle Name="Status" Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1" Margin="-35 0 0 0"/>
-            <Grid Width="135" Height="50" x:Name="BtnGrid">
+            <Rectangle x:Name="Status" Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1" Margin="-35 0 0 0"/>
+            <Grid Width="135" Height="50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="4*" x:Name="BtnGridLen2"/>
+                    <ColumnDefinition Width="{Binding BtnGridColLen}"/>
                 </Grid.ColumnDefinitions>
 
                 <Image
@@ -40,9 +42,9 @@
                     Height="32"
                     HorizontalAlignment="Left"
                     Grid.Column="0"  
-                    Name="BtnImg"
+                    Source="{Binding BtnImgSource}"
                         />
-                <TextBlock Name="BtnTxt" Text="_Filler_" Grid.Column="1" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+                <TextBlock Text="{Binding BtnTxt}" Grid.Column="1" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
             </Grid>
         </StackPanel>
     </Button>

@@ -74,7 +74,7 @@
                         </Label>
 
                         <!--HOME-->
-                        <control:CBBtn_UC x:Name="CBCtrlHome" Margin="0 20 0 0" />
+                        <control:CBBtn_UC x:Name="CBCtrlHome"/>
 
                         <!--HISTORY-->
                         <control:CBBtn_UC x:Name="CBCtrlHistory" />
@@ -116,7 +116,7 @@
                         </Label>
 
                         <!--NOTES OVERVIEW-->
-                        <control:CBBtn_UC x:Name="CBCtrlNotes" />
+                        <control:CBBtn_UC x:Name="CBCtrlNotes" Click="CBCtrlNotes_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/notebookWhiteIcon.png" BtnTxt="Notes"/>
 
                         <!--TASKS OVERVIEW-->
                         <control:CBBtn_UC x:Name="CBCtrlTasks" />
