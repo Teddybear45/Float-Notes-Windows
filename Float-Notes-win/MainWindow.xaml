@@ -74,7 +74,7 @@
                         </Label>
 
                         <!--HOME-->
-                        <control:CBBtn_UC x:Name="CBCtrlHome" Margin="0 20 0 0"/>
+                        <control:CBBtn_UC x:Name="CBCtrlHome" Margin="0 20 0 0" />
 
                         <!--HISTORY-->
                         <control:CBBtn_UC x:Name="CBCtrlHistory" />

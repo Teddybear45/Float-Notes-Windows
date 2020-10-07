@@ -111,26 +111,14 @@ namespace Float_Notes_win
 
                 CB.BtnGrid.Width = (Double)50;
                 CB.Btn.Width = (Double)55;
+
+                CB.Status.Margin = new Thickness(-15, 0, 0, 0);
+
             }
         }
 
         private void MaxmizeControlBoardClick(object sender, RoutedEventArgs e)
         {
-
-
-            //shows text of control board
-            //homeControlBoardText.Visibility = Visibility.Visible;
-            //historyControlBoardText.Visibility = Visibility.Visible;
-            //calendarControlBoardText.Visibility = Visibility.Visible;
-            //classesControlBoardText.Visibility = Visibility.Visible;
-            //notesControlBoardText.Visibility = Visibility.Visible;
-            //tasksControlBoardText.Visibility = Visibility.Visible;
-            //plusNoteControlBoardText.Visibility = Visibility.Visible;
-            //plusTaskControlBoardText.Visibility = Visibility.Visible;
-            //plusReminderControlBoardText.Visibility = Visibility.Visible;
-            //plusMeetingControlBoardText.Visibility = Visibility.Visible;
-
-
             //sets control board width to greater amt
             controlBoardCol.Width = new GridLength(195);
 
@@ -149,6 +137,8 @@ namespace Float_Notes_win
 
                 CB.BtnGrid.Width = (Double)135;
                 CB.Btn.Width = (Double)150;
+
+                CB.Status.Margin = new Thickness(-35, 0, 0, 0);
             }
 
         }

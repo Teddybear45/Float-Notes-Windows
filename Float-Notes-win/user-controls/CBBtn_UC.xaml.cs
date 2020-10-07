@@ -24,11 +24,5 @@ namespace Float_Notes_win.user_controls
         {
             InitializeComponent();
         }
-        public String ImgSrc { get; set; }
-
-        private void Btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
