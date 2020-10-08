@@ -36,7 +36,7 @@
         </Grid.ColumnDefinitions>
 
         <!--control board-->
-        <Border BorderBrush="#FF0A0A0C" BorderThickness="10" CornerRadius="20" Grid.Column="0" Margin="0 0 0 0">
+        <Border BorderBrush="#FF0A0A0C" BorderThickness="2" CornerRadius="4" Grid.Column="0" Margin="0 0 0 0">
             <Border.Resources>
                 <Style TargetType="ScrollViewer">
                     <Style.Triggers>
@@ -50,14 +50,13 @@
                 </Style>
             </Border.Resources>
             <ScrollViewer>
-                <Grid>
-                    <StackPanel Orientation="Vertical" Background="#FF0A0A0C">
-                        <!--COM LOGO AND NAME-->
-                        <Label Margin="0 0 0 0">
-                            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Background="#FF0A0A0C">
+                    <!--COM LOGO AND NAME-->
+                    <Label Margin="0 0 0 0">
+                        <StackPanel Orientation="Horizontal">
 
-                                <!--com logo-->
-                                <Image Source="/IMG/resource-img/notepad.png"
+                            <!--com logo-->
+                            <Image Source="/IMG/resource-img/notepad.png"
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="26"
@@ -67,98 +66,98 @@
                                 HorizontalAlignment="Center"
                                    />
 
-                                <!--com name-->
-                                <TextBlock FontWeight="Medium" FontSize="20" VerticalAlignment="Center" Text="Float Notes" Foreground="#fdfdfd"/>
+                            <!--com name-->
+                            <TextBlock FontWeight="Medium" FontSize="20" VerticalAlignment="Center" Text="Float Notes" Foreground="#fdfdfd"/>
 
-                            </StackPanel>
-                        </Label>
+                        </StackPanel>
+                    </Label>
 
-                        <!--HOME-->
-                        <control:CBBtn_UC x:Name="CBCtrlHome"/>
+                    <!--HOME-->
+                    <control:CBBtn_UC x:Name="CBCtrlHome" Margin="0 20 0 0" Click="CBCtrlHome_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/houseWhiteIcon.png" BtnTxt="Home"/>
 
-                        <!--HISTORY-->
-                        <control:CBBtn_UC x:Name="CBCtrlHistory" />
+                    <!--HISTORY-->
+                    <control:CBBtn_UC x:Name="CBCtrlHistory" Click="CBCtrlHistory_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/clockWhiteIcon.png" BtnTxt="History"/>
 
-                        <!--OVERVIEW LABEL-->
-                        <Label Margin="0 25 0 5">
-                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
+                    <!--OVERVIEW LABEL-->
+                    <Label Margin="0 25 0 5">
+                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0" Text="Overview" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+                            <TextBlock Grid.Row="0" Text="Overview" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
 
-                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
+                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
-                            </Grid>
-                        </Label>
+                        </Grid>
+                    </Label>
 
-                        <!--CALENDAR OVERVIEW-->
-                        <control:CBBtn_UC x:Name="CBCtrlCalendar" />
+                    <!--CALENDAR OVERVIEW-->
+                    <control:CBBtn_UC x:Name="CBCtrlCalendar" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/calendarWhiteIcon.png" Click="CBCtrlCalendar_Click" BtnTxt="Calendar"/>
 
-                        <!--CLASS OVERVIEW-->
-                        <control:CBBtn_UC x:Name="CBCtrlClassOverview" />
+                    <!--CLASS OVERVIEW-->
+                    <control:CBBtn_UC x:Name="CBCtrlClassOverview" Click="CBCtrlClassOverview_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/bookWhiteIcon.png" BtnTxt="Class"/>
 
-                        <!--GENERAL LABEL-->
-                        <Label Margin="0 15 0 5">
-                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
+                    <!--GENERAL LABEL-->
+                    <Label Margin="0 15 0 5">
+                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0" Text="General" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+                            <TextBlock Grid.Row="0" Text="General" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
 
-                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
+                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#FFDDF0FF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
-                            </Grid>
-                        </Label>
+                        </Grid>
+                    </Label>
 
-                        <!--NOTES OVERVIEW-->
-                        <control:CBBtn_UC x:Name="CBCtrlNotes" Click="CBCtrlNotes_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/notebookWhiteIcon.png" BtnTxt="Notes"/>
+                    <!--NOTES OVERVIEW-->
+                    <control:CBBtn_UC x:Name="CBCtrlNotes" Click="CBCtrlNotes_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/notebookWhiteIcon.png" BtnTxt="Notes"/>
 
-                        <!--TASKS OVERVIEW-->
-                        <control:CBBtn_UC x:Name="CBCtrlTasks" />
+                    <!--TASKS OVERVIEW-->
+                    <control:CBBtn_UC x:Name="CBCtrlTasks" Click="CBCtrlTasks_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/tasksListWhiteIcon.png" BtnTxt="Tasks"/>
 
-                        <!--CREATE LABEL-->
-                        <Label Margin="0 15 0 5">
-                            <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="2*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
+                    <!--CREATE LABEL-->
+                    <Label Margin="0 15 0 5">
+                        <Grid Height="40" Width="120" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
 
-                                <TextBlock Grid.Row="0" Text="Create" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
+                            <TextBlock Grid.Row="0" Text="Create" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#9fa9be"/>
 
-                                <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#66CD9BFF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
+                            <Rectangle Grid.Row="1" Width="80" Height="4" Fill="#66CD9BFF" RadiusX="2" RadiusY="2" VerticalAlignment="Top"/>
 
-                            </Grid>
-                        </Label>
+                        </Grid>
+                    </Label>
 
-                        <!--CREATE NOTE-->
-                        <control:CBBtn_UC x:Name="CBCtrlCreateNote" />
+                    <!--CREATE NOTE-->
+                    <control:CBBtn_UC x:Name="CBCtrlCreateNote" BtnGridColLen="4*" Click="CBCtrlCreateNote_Click" BtnImgSource="/IMG/resource-img/stickyNoteIcon.png" BtnTxt="Note"/>
 
-                        <!--CREATE TASK-->
-                        <control:CBBtn_UC x:Name="CBCtrlCreateTask" />
+                    <!--CREATE TASK-->
+                    <control:CBBtn_UC x:Name="CBCtrlCreateTask" Click="CBCtrlCreateTask_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/doubleCheckMarkIcon.png" BtnTxt="Task"/>
 
-                        <!--CREATE REMINDER-->
-                        <control:CBBtn_UC x:Name="CBCtrlCreateReminder"/>
-                        
-                        <!--CREATE MEETING-->
-                        <control:CBBtn_UC x:Name="CBCtrlCreateMeeting" />
+                    <!--CREATE REMINDER-->
+                    <control:CBBtn_UC x:Name="CBCtrlCreateReminder" Click="CBCtrlCreateReminder_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/handPointerIcon.png" BtnTxt="Reminder"/>
 
-                        <!--minimize-->
-                        <Button Width="44" Height="44" Margin="100 30 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MinimizeControlBoardClick" x:Name="minControlBoardBtn" >
+                    <!--CREATE MEETING-->
+                    <control:CBBtn_UC x:Name="CBCtrlCreateMeeting" Click="CBCtrlCreateMeeting_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/displayMonitorIcon.png" BtnTxt="Meeting"/>
 
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                    <!--minimize-->
+                    <Button Width="44" Height="44" Margin="100 30 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MinimizeControlBoardClick" x:Name="minControlBoardBtn" >
 
-                            <Image Source="/IMG/resource-img/minimizeLeftIcon.png"                                    
+                        <!--rounds the corner of the button-->
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
+
+                        <Image Source="/IMG/resource-img/minimizeLeftIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"
@@ -169,19 +168,19 @@
                                
                                />
 
-                        </Button>
+                    </Button>
 
-                        <!--maximize-->
-                        <Button Width="44" Height="44" Margin="0 -44 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MaxmizeControlBoardClick" x:Name="maxControlBoardBtn" Visibility="Hidden">
+                    <!--maximize-->
+                    <Button Width="44" Height="44" Margin="0 -44 0 0" Background="Transparent" BorderBrush="{x:Null}" BorderThickness="1" Click="MaxmizeControlBoardClick" x:Name="maxControlBoardBtn" Visibility="Hidden">
 
-                            <!--rounds the corner of the button-->
-                            <Button.Resources>
-                                <Style TargetType="Border">
-                                    <Setter Property="CornerRadius" Value="5"/>
-                                </Style>
-                            </Button.Resources>
+                        <!--rounds the corner of the button-->
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"/>
+                            </Style>
+                        </Button.Resources>
 
-                            <Image Source="/IMG/resource-img/maximizeRightIcon.png"                                    
+                        <Image Source="/IMG/resource-img/maximizeRightIcon.png"                                    
                                 RenderOptions.BitmapScalingMode="Fant"
                                 Stretch="Fill"
                                 Width="38"
@@ -191,9 +190,8 @@
                                 HorizontalAlignment="Center"
                                
                                />
-                        </Button>
-                    </StackPanel>
-                </Grid>
+                    </Button>
+                </StackPanel>
             </ScrollViewer>
         </Border>
 

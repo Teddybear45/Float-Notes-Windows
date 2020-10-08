@@ -47,35 +47,6 @@ namespace Float_Notes_win
 
         private void InitializeControlBoard()
         {
-            //CBCtrlHome.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/houseWhiteIcon.png", UriKind.Relative));
-            //CBCtrlHome.BtnTxt.Text = "Home";
-
-            //CBCtrlHistory.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/clockWhiteIcon.png", UriKind.Relative));
-            //CBCtrlHistory.BtnTxt.Text = "History";
-
-            //CBCtrlCalendar.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/calendarWhiteIcon.png", UriKind.Relative));
-            //CBCtrlCalendar.BtnTxt.Text = "Calendar";
-
-            //CBCtrlClassOverview.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/bookWhiteIcon.png", UriKind.Relative));
-            //CBCtrlClassOverview.BtnTxt.Text = "Class";
-
-            //CBCtrlNotes.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/notebookWhiteIcon.png", UriKind.Relative));
-            //CBCtrlNotes.BtnTxt.Text = "Notes";
-
-            //CBCtrlTasks.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/tasksListWhiteIcon.png", UriKind.Relative));
-            //CBCtrlTasks.BtnTxt.Text = "Tasks";
-
-            //CBCtrlCreateNote.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/stickyNoteIcon.png", UriKind.Relative));
-            //CBCtrlCreateNote.BtnTxt.Text = "Note";
-
-            //CBCtrlCreateTask.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/doubleCheckMarkIcon.png", UriKind.Relative));
-            //CBCtrlCreateTask.BtnTxt.Text = "Task";
-
-            //CBCtrlCreateReminder.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/handPointerIcon.png", UriKind.Relative));
-            //CBCtrlCreateReminder.BtnTxt.Text = "Reminder";
-
-            //CBCtrlCreateMeeting.BtnImg.Source = new BitmapImage(new Uri(@"/IMG/resource-img/displayMonitorIcon.png", UriKind.Relative));
-            //CBCtrlCreateMeeting.BtnTxt.Text = "Meeting";
 
             CBItems.Add(CBCtrlHome);
             CBItems.Add(CBCtrlHistory);
@@ -103,16 +74,17 @@ namespace Float_Notes_win
             //hides text of control board
             foreach (CBBtn_UC CB in CBItems)
             {
-                //CB.BtnTxt.Visibility = Visibility.Hidden;
-                
-                ////changes to button and grid and image and img alignment inside each segment of control board
-                //CB.BtnGridLen2.Width = new GridLength(0);
+                CB.BtnTxtBlock.Visibility = Visibility.Hidden;
+
+                //changes to button and grid and image and img alignment inside each segment of control board
+                CB.BtnGridColLen = new GridLength(0);
                 //CB.BtnImg.HorizontalAlignment = HorizontalAlignment.Center;
 
-                //CB.BtnGrid.Width = (Double)50;
-                //CB.Btn.Width = (Double)55;
+                CB.BtnGrid.Width = (Double)55;
+                CB.Btn.Width = (double)50;
 
-                //CB.Status.Margin = new Thickness(-15, 0, 0, 0);
+                CB.Status.Margin = new Thickness(0, 0, 0, 0);
+
 
             }
         }
@@ -168,6 +140,51 @@ namespace Float_Notes_win
         {
             Main.Content = Key_NotesPage;
             GLOBALS.currentTab = "NotesPage";
+        }
+
+        private void CBCtrlTasks_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlHistory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlHome_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlCalendar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlClassOverview_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlCreateNote_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlCreateTask_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlCreateReminder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CBCtrlCreateMeeting_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
