@@ -116,26 +116,6 @@ namespace Float_Notes_win
         }
 
 
-        private void HistoryBtnClick(object sender, RoutedEventArgs e)
-        {
-            Main.Content = Key_HistoryPage;
-            GLOBALS.currentTab = "HistoryPage";
-
-        }
-
-        private void HomeBtnClick(object sender, RoutedEventArgs e)
-        {
-            Main.Content = Key_HomePage;
-            GLOBALS.currentTab = "HomePage";
-
-        }
-
-        private void TasksBtnClick(object sender, RoutedEventArgs e)
-        {
-            Main.Content = Key_TasksPage;
-            GLOBALS.currentTab = "TasksPage";
-        }
-
         private void CBCtrlNotes_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = Key_NotesPage;
@@ -144,17 +124,20 @@ namespace Float_Notes_win
 
         private void CBCtrlTasks_Click(object sender, RoutedEventArgs e)
         {
-
+            Main.Content = Key_TasksPage;
+            GLOBALS.currentTab = "TasksPage";
         }
 
         private void CBCtrlHistory_Click(object sender, RoutedEventArgs e)
         {
-
+            Main.Content = Key_HistoryPage;
+            GLOBALS.currentTab = "HistoryPage";
         }
 
         private void CBCtrlHome_Click(object sender, RoutedEventArgs e)
         {
-
+            Main.Content = Key_HomePage;
+            GLOBALS.currentTab = "HomePage";
         }
 
         private void CBCtrlCalendar_Click(object sender, RoutedEventArgs e)

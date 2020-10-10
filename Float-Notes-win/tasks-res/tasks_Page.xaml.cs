@@ -59,7 +59,28 @@ namespace Float_Notes_win.tasks_res
             }
         }
 
-        private void createTaskBtn(object sender, RoutedEventArgs e)
+        //private void createTaskBtn(object sender, RoutedEventArgs e)
+        //{
+        //    _TaskItem task = new _TaskItem();
+        //    task.TaskContent = CreateTaskTextBox.Text;
+        //    task.TaskPopTime = DateTime.Now.AddMinutes(2);
+
+        //    GLOBALS.Tasks.Add(task);
+
+            
+        //    clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskContent, TaskPopTime)" + " VALUES ('" + task.TaskContent + "', + '" + task.TaskPopTime + "')");
+            
+
+        //}
+
+        private void createNewTagBtn(object sender, RoutedEventArgs e)
+        {
+            string newTag = "First Period Humanities";
+            clsDB.Execute_SQL($"INSERT INTO tbl_Tags (Definition)" + " VALUES ('" + newTag + "')");
+            GLOBALS.Tags.Add(new _TagItem() { Definition = newTag });
+        }
+
+        private void ConfirmNewTask_Click(object sender, RoutedEventArgs e)
         {
             _TaskItem task = new _TaskItem();
             task.TaskContent = CreateTaskTextBox.Text;
@@ -67,17 +88,8 @@ namespace Float_Notes_win.tasks_res
 
             GLOBALS.Tasks.Add(task);
 
-            
+
             clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskContent, TaskPopTime)" + " VALUES ('" + task.TaskContent + "', + '" + task.TaskPopTime + "')");
-            
-
-        }
-
-        private void createNewTagBtn(object sender, RoutedEventArgs e)
-        {
-            string newTag = "First Period Humanities";
-            clsDB.Execute_SQL($"INSERT INTO tbl_Tags (Definition)" + " VALUES ('" + newTag + "')");
-            GLOBALS.Tags.Add(new _TagItem() { Definition = newTag });
         }
     }
 }
