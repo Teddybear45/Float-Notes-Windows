@@ -76,6 +76,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="class-res\class_Page.xaml.cs">
+      <DependentUpon>class_Page.xaml</DependentUpon>
+    </Compile>
     <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\_GeneralNote.cs" />
     <Compile Include="classes\_HistoryTabs.cs" />
@@ -97,6 +100,13 @@
     <Compile Include="user-controls\CBBtn_UC.xaml.cs">
       <DependentUpon>CBBtn_UC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="user-controls\CBSep_UC.xaml.cs">
+      <DependentUpon>CBSep_UC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="class-res\class_Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="user-controls\CBBtn_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user-controls\CBSep_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
