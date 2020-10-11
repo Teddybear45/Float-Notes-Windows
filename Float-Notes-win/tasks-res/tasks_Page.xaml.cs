@@ -26,12 +26,14 @@ namespace Float_Notes_win.tasks_res
     /// </summary>
     public partial class tasks_Page : Page
     {
-                
+
         public tasks_Page()
         {
-            db_Refresh_TaskTags();
             InitializeComponent();
+            db_Refresh_TaskTags();
+            db_Refresh_TaskItems();
             ListViewTasksTags.ItemsSource = GLOBALS.Tags;
+            ListViewTaskItems.ItemsSource = GLOBALS.Tasks;
         }
 
 
@@ -58,6 +60,29 @@ namespace Float_Notes_win.tasks_res
                 }
             }
         }
+        //takes values from DB and refreshes table
+        private void db_Refresh_TaskItems()
+        {
+            GLOBALS.Tasks.Clear();
+
+            using (SqlConnection con = clsDB.Get_DB_Connection())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_TaskItems", con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                GLOBALS.Tasks.Add(new _TaskItem() { TaskContent = reader.GetString(1) });
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         //private void createTaskBtn(object sender, RoutedEventArgs e)
         //{
@@ -67,13 +92,13 @@ namespace Float_Notes_win.tasks_res
 
         //    GLOBALS.Tasks.Add(task);
 
-            
+
         //    clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskContent, TaskPopTime)" + " VALUES ('" + task.TaskContent + "', + '" + task.TaskPopTime + "')");
-            
+
 
         //}
 
-        private void createNewTagBtn(object sender, RoutedEventArgs e)
+        private void createNewTagBtn(object sender, RoutedEventArgs e) //todo
         {
             string newTag = "First Period Humanities";
             clsDB.Execute_SQL($"INSERT INTO tbl_Tags (Definition)" + " VALUES ('" + newTag + "')");
@@ -88,8 +113,8 @@ namespace Float_Notes_win.tasks_res
 
             GLOBALS.Tasks.Add(task);
 
-
             clsDB.Execute_SQL($"INSERT INTO tbl_TaskItems (TaskContent, TaskPopTime)" + " VALUES ('" + task.TaskContent + "', + '" + task.TaskPopTime + "')");
+            CreateTaskTextBox.Text = "";
         }
     }
 }

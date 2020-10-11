@@ -184,10 +184,12 @@
     <Resource Include="IMG\resource-img\displayMonitorIcon.png" />
     <Resource Include="IMG\resource-img\maximizeRightIcon.png" />
     <Resource Include="IMG\resource-img\arrowDownIcon.png" />
-    <Content Include="data\db_float.mdf">
+    <Content Include="..\..\..\..\OneDrive\float\data\db_float.mdf">
+      <Link>db_float.mdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\db_float_log.ldf">
+    <Content Include="..\..\..\..\OneDrive\float\data\db_float_log.ldf">
+      <Link>db_float_log.ldf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_float.mdf</DependentUpon>
     </Content>

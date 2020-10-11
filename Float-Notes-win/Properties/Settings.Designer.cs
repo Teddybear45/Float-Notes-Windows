@@ -26,8 +26,8 @@ namespace Float_Notes_win.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\data\\db_float" +
-            ".mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\tedgu\\OneDrive\\float" +
+            "\\data\\db_float.mdf;Integrated Security=True")]
         public string FloatDBConnectionString {
             get {
                 return ((string)(this["FloatDBConnectionString"]));
@@ -36,9 +36,8 @@ namespace Float_Notes_win.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\tedgu\\CS\\vs-projects" +
-            "\\source\\repos\\Solution_FloatNotes\\Float-Notes-Windows\\Float-Notes-win\\data\\db_fl" +
-            "oat.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\tedgu\\OneDrive\\float" +
+            "\\data\\db_float.mdf;Integrated Security=True")]
         public string connection_String {
             get {
                 return ((string)(this["connection_String"]));

@@ -97,7 +97,7 @@ namespace Float_Notes_win.sub_content
             {
                 GLOBALS.HistoryTabs.Add(new _HistoryTabs() { ParentTab = GLOBALS.currentTab, Detail = "IDGeneralNotes=" + CurrentGeneralNoteID });
             }
-            
+
             CurrentGeneralNoteID = -1;
             GeneralNoteTextbox.Text = "";
 
@@ -107,7 +107,7 @@ namespace Float_Notes_win.sub_content
 
             db_Refresh_GeneralNotes();
 
-            
+
 
         }
 
