@@ -121,7 +121,7 @@
                     <control:CBBtn_UC x:Name="CBCtrlTasks" Click="CBCtrlTasks_Click" BtnGridColLen="4*" BtnImgSource="/IMG/resource-img/tasksListWhiteIcon.png" BtnTxt="Tasks"/>
 
 
-                    <control:CBSep_UC SepTxt="Create"/>
+                    <control:CBSep_UC x:Name="CBSepCreate" SepTxt="Create"/>
 
                     <!--CREATE NOTE-->
                     <control:CBBtn_UC x:Name="CBCtrlCreateNote" BtnGridColLen="4*" Click="CBCtrlCreateNote_Click" BtnImgSource="/IMG/resource-img/stickyNoteIcon.png" BtnTxt="Note"/>

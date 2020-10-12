@@ -20,7 +20,7 @@ namespace Float_Notes_win.user_controls
     /// </summary>
     public partial class CBSep_UC : UserControl
     {
-        public String SepTxt
+        public string SepTxt
         {
             get { return (String)GetValue(SepTxtProperty); }
             set { SetValue(SepTxtProperty, value); }
