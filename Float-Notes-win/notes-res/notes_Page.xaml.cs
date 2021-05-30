@@ -57,25 +57,13 @@ namespace Float_Notes_win.sub_content
                         {
                             while (reader.Read())
                             {
-                                _GeneralNote nextNote = new _GeneralNote() { content = reader.GetString(1) };
-                                nextNote.update_cHeight();
-                                Trace.WriteLine("after");
-                                GeneralNotes.Add(nextNote);
-                                
+                                GeneralNotes.Add(new _GeneralNote() { content = reader.GetString(1) });
+
                             }
                         }
                     }
                 }
             }
-
-            Trace.WriteLine(GeneralNotes + " Before rev");
-
-
-            GeneralNotes.Reverse();
-
-            Trace.WriteLine(GeneralNotes + " After rev");
-
-
         }
 
         //returns ID of created
@@ -88,7 +76,6 @@ namespace Float_Notes_win.sub_content
 
             Trace.WriteLine(insertedID + " insertedID");
 
-            db_Refresh_GeneralNotes();
 
             return insertedID;
 
@@ -106,12 +93,22 @@ namespace Float_Notes_win.sub_content
         private void GeneralNoteTextbox_LostFocus(object sender, RoutedEventArgs e)
 
         {
+            if (GeneralNoteTextbox.Text != "")
+            {
+                GLOBALS.HistoryTabs.Add(new _HistoryTabs() { ParentTab = GLOBALS.currentTab, Detail = "IDGeneralNotes=" + CurrentGeneralNoteID });
+            }
+
             CurrentGeneralNoteID = -1;
             GeneralNoteTextbox.Text = "";
-            
+
             GeneralNoteTextbox.SetValue(Grid.ColumnProperty, 1);
             GeneralNoteTextbox.SetValue(Grid.ColumnSpanProperty, 2);
             this.Resources["DynamicCreateNoteHeight"] = new GridLength(120);
+
+            db_Refresh_GeneralNotes();
+
+
+
         }
 
         private void GeneralNoteTextbox_TextChanged(object sender, TextChangedEventArgs e)
@@ -119,12 +116,17 @@ namespace Float_Notes_win.sub_content
 
             String checkText = GeneralNoteTextbox.Text;
 
-            if (checkText == "'" || checkText == "\"")
-            {
-                checkText += "'";
-            }
+            //if (checkText == "'" || checkText == "\"")
+            //{
+            //    checkText += "'";
+            //}
+            //
+            //if (checkText != "")
+
+            //TODO checktext for sql
 
             if (checkText != "")
+
             {
                 if (CurrentGeneralNoteID == -1)
                 {
@@ -136,7 +138,7 @@ namespace Float_Notes_win.sub_content
                 {
                     clsDB.Execute_SQL($"UPDATE tbl_GeneralNotes SET GeneralNoteContent = " + "'" + checkText + "'" + " WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
 
-                    db_Refresh_GeneralNotes();
+
                 }
             }
 
@@ -147,7 +149,6 @@ namespace Float_Notes_win.sub_content
                     clsDB.Execute_SQL($"DELETE FROM tbl_GeneralNotes WHERE IDGeneralNotes = " + "'" + CurrentGeneralNoteID + "'");
                     CurrentGeneralNoteID = -1;
 
-                    db_Refresh_GeneralNotes();
                 }
             }
 

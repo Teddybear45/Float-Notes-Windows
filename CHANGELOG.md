@@ -1,0 +1,33 @@
+- todo list and listviews of history page completed, need to connect to db and refresh with optimizations
+- removed refresh of listview per change
+- generalized sizes for g Notes show
+- remove old
+- Merge branch 'master' into localDB_GNotes
+- adjusting views and wraps views
+- custom listview started. lost focus save
+- null text change logic
+- synced DB and table
+- linked textbox and listview
+- linking issues with textbox
+- errors. linking add notes and id sync
+- focus create notes
+- optimization
+- can read from db
+- textbox update
+- listview updating from given data. need to query db for given data
+- able to add custom info to database via external clsDB methods
+- g notes connected with DB and able to send value, not given value, to db. db storing
+- tested db
+- clsDB console test
+- clsDB externals added
+- soon to add clsDB class to connect
+- sql compact edition use. no link set. not working. table init set
+- removed sqlite DB from prev branch copy
+- sqlite db sqlitedataacess.cs not working connections and calling db returns list of elements, not class; notespage.cs unable to read from list rather than class
+- not working; broken access to db for viewing listbox items content; sqlitedataacess incorrect
+- ignore files configured
+- added ignore
+- cleaned ignore files
+- added ignore
+- starting link sqlite
+- first commit tranfer, lost prev versions

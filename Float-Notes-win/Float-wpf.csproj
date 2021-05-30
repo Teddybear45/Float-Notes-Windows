@@ -58,9 +58,6 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.113.1\lib\net46\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -79,7 +76,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="class-res\class_Page.xaml.cs">
+      <DependentUpon>class_Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="classes\GLOBALS.cs" />
     <Compile Include="classes\_GeneralNote.cs" />
+    <Compile Include="classes\_HistoryTabs.cs" />
+    <Compile Include="classes\_TagItem.cs" />
+    <Compile Include="classes\_TaskItem.cs" />
     <Compile Include="history-res\history_Page.xaml.cs">
       <DependentUpon>history_Page.xaml</DependentUpon>
     </Compile>
@@ -89,14 +93,17 @@
     <Compile Include="notes-res\notes_Page.xaml.cs">
       <DependentUpon>notes_Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="User-Controls\ControlBoardBtn.xaml.cs">
-      <DependentUpon>ControlBoardBtn.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="User-Controls\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
+    <Compile Include="tasks-res\tasks_Page.xaml.cs">
+      <DependentUpon>tasks_Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="classes\clsDB.cs" />
-    <Page Include="Dictionary1.xaml">
+    <Compile Include="user-controls\CBBtn_UC.xaml.cs">
+      <DependentUpon>CBBtn_UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="user-controls\CBSep_UC.xaml.cs">
+      <DependentUpon>CBSep_UC.xaml</DependentUpon>
+    </Compile>
+    <Page Include="class-res\class_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,11 +135,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User-Controls\ControlBoardBtn.xaml">
+    <Page Include="tasks-res\tasks_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="User-Controls\UserControl1.xaml">
+    <Page Include="user-controls\CBBtn_UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user-controls\CBSep_UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,13 +197,17 @@
     <Resource Include="IMG\resource-img\handPointerIcon.png" />
     <Resource Include="IMG\resource-img\displayMonitorIcon.png" />
     <Resource Include="IMG\resource-img\maximizeRightIcon.png" />
-    <Content Include="data\db_float.mdf">
+    <Resource Include="IMG\resource-img\arrowDownIcon.png" />
+    <Content Include="..\..\..\..\..\..\..\OneDrive\float\data\db_float.mdf">
+      <Link>db_float.mdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="data\db_float_log.ldf">
+    <Content Include="..\..\..\..\..\..\..\OneDrive\float\data\db_float_log.ldf">
+      <Link>db_float_log.ldf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db_float.mdf</DependentUpon>
     </Content>
+    <Content Include="IMG\resource-svg\arrowDown.svg" />
     <Content Include="IMG\resource-svg\bookWhite.svg" />
     <Content Include="IMG\resource-svg\calendarWhite.svg" />
     <Content Include="IMG\resource-svg\clockWhite.svg" />
@@ -208,9 +223,7 @@
     <Content Include="IMG\resource-svg\tasksListWhite.svg" />
     <Resource Include="IMG\resource-img\doubleCheckMarkIcon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="sub-content\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>

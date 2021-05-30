@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace Float_Notes_win
 {
@@ -20,6 +21,6 @@ namespace Float_Notes_win
             e.Handled = true;
         }
 
-
+       
     }
 }

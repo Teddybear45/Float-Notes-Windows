@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Float_Notes_win.user_controls.CBBtn_UC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Float_Notes_win.user_controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             >
+
+
+    <Button 
+        Width="150"
+        Height="55"
+        Background="#FF0E1215"
+        Margin="0 5 0 0"
+        BorderBrush="{x:Null}"
+        Click="Btn_Click"
+        x:Name="Btn"
+            >
+        <!--rounds the corner of the button-->
+        <Button.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Button.Resources>
+        
+        <StackPanel Orientation="Horizontal">
+            <!--status content-->
+            <Rectangle x:Name="Status" Width="3" Height="35" Fill="#a7ff83"  RadiusX="1" RadiusY="1" Margin="-35 0 0 0"/>
+            <Grid Width="135" Height="50" x:Name="BtnGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="{Binding BtnGridColLen}"/>
+                </Grid.ColumnDefinitions>
+
+                <Image
+                    RenderOptions.BitmapScalingMode="Fant"
+                    Stretch="Fill"
+                    Width="32"
+                    Height="32"
+                    HorizontalAlignment="Left"
+                    Grid.Column="0"  
+                    Source="{Binding BtnImgSource}"
+                    x:Name="BtnImg"
+                        />
+                <TextBlock Text="{Binding BtnTxt}" x:Name="BtnTxtBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="5 0 0 0" FontWeight="Normal" FontSize="18" VerticalAlignment="Center" Foreground="#fdfdfd"/>
+            </Grid>
+        </StackPanel>
+    </Button>
+</UserControl>

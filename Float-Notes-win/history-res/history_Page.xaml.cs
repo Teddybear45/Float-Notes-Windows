@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Float_Notes_win._classes;
+using Float_Notes_win.classes;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +27,54 @@ namespace Float_Notes_win.sub_content
 	public partial class history_page : Page
 	{
 
+		private int tabsShown = 25;
 
 		public history_page()
 		{
 			InitializeComponent();
-			this.DataContext = this;
+
+            db_Refresh_HistoryTabs();
+
+			ListViewHistory.ItemsSource = GLOBALS.HistoryTabs;
+
+            Trace.WriteLine("init history");
 
 		}
+
+		public void resetAmtShown()
+        {
+			tabsShown = 25;
+        }
+
+		public void db_Refresh_HistoryTabs()
+        {
+			GLOBALS.HistoryTabs.Clear();
+
+            int count = tabsShown;
+
+            using (SqlConnection con = clsDB.Get_DB_Connection())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_HistoryItems", con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader != null)
+                        {
+
+                            while (reader.Read() && count >= 0) 
+                            {
+                                GLOBALS.HistoryTabs.Add(new _HistoryTabs() { ParentTab = reader.GetString(1), Detail = reader.GetString(2) });
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //TODO HISTORY PAGE connection to DB and connection to other actions from other tabs
+
+
 
 	
 	}
